@@ -1,0 +1,3332 @@
+{
+  "铝厂": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 12
+  },
+  "叶盛": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "大坝": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "小坝镇": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "河东": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "河西": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "瞿靖": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "裕民": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 0.9,
+    "support": "manual"
+  },
+  "小坝": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 0.84,
+    "support": "manual"
+  },
+  "*****青铜峡小坝步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  ",青铜峡市铝厂一村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  ",青铜峡市铝厂三村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "CCMALL": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "CCMALL广场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "cc-mall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "ccmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "“蜜雪冰城”正科商业广场店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "东大厨卫指纹锁经销部": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "东海足浴": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "东盛音乐火锅": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "丝路银庄": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "丫丫针织馆": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "中国黄金": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 7
+  },
+  "中国黄金商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "中国黄金店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "二虎早茶牛肉面": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "五里关火锅": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "五里关火锅商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "五里关火锅店商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "亲水湖畔小区斜对面5-8号店铺": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "仁梓涵美甲店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "优美优品": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "佰纳依人依点店商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "佳旺家私城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "佳美窗帘商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "六喜珠宝": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "兰馨苑B区南门169号商贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "兰馨苑C区南门口安康街57号商贸房": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "冠珠瓷砖": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利明小区南侧“老面小笼包”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利民东街149号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利民东街42号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利民东街72号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利民街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利民西街23#25#商贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "利通区关马湖服务区": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "北环路": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "古峡东街118号忆江南西侧": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "古峡商业中心1#商业楼": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "古峡商业中心77#": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "古峡西街171号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "古峡西街“爱玛”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "叶盛的米": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "叶盛镇": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 7
+  },
+  "叶盛镇三叉路口东侧": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "叶盛镇东街": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "叶盛镇中心街": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "叶盛镇农贸市场东侧": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "叶盛镇龙门村四队": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "同兴村市场": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "同进村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "周大生商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "周大生黄金": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "和府小区东门": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "品炫通讯": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "商城北门停车场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "商城西门清真寺对面": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "嘉合装饰好莱客商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "塞上江南广场地下负一层超市部分0号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "塞尚江南对面小广场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "大坝电厂": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "大梁水果店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "天一街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "天一街39号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "天一街42号雅丝美发店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "天一街6号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "天马毛线店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏京源方粮油有限公司": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏创优鲜果有限公司": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏时花商贸有限公司": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "宁夏昊顺德食品有限公司青铜峡分公司": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏梓金木材有限公司": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏贺兰雪山泉水业有限公司": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "宁夏贺兰雪山泉水业有限公司商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏锦天顺食品有限公司": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏青铜峡市叶升镇路口": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏青铜峡市叶盛米业有限公司": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宁夏鸿福工贸有限公司": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "宝贝百分百": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "家私城二楼": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小刀电动车": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小刀电动车商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝CCMALL": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝CCMall二楼": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝CCMall二楼仁梓涵美甲店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝利民西街龙海花园56号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝古峡东街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 7
+  },
+  "小坝古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "小坝商城238号“海绵毡批发”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝商城2楼": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝商城东厅": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝商城西侧": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝夜市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝天一街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝天一街139#-2": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝天一街21、23号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝建民南街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 7
+  },
+  "小坝文化南街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 27
+  },
+  "小坝步行街正科商业广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝步行街路口": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝永丰南路72号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝汉坝东街210-1号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝汉坝东街252号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇CCMALL": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇中医院北侧“五星电动车”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇佳旺家私城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇兰馨路046号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇兰馨路12号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇利民西街35号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇利民西街76号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇商城东南角": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇夜市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇天一街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "小坝镇女人街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇家旺家私城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇小坝商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇工业园区嘉宝片区亲民路8号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇康乐街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "小坝镇康乐街115号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇张岗村一队小康楼21号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "小坝镇早市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇朔方路": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇正科商业广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 24
+  },
+  "小坝镇步行街1号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇步行街路口": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇永丰北街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "小坝镇汉坝东街220号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇汉坝西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇汉坝西街与建民北路交叉口": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇滨河大道": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇禹皇家具装饰材料市场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇老广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇老车站": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇蒋南村": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇裕民街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "小坝镇金三角": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇金岸一品": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇金岸一品农贸市场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "小坝镇龙海商业街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 9
+  },
+  "小牛电动车": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "小郑汉餐商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "尚客优连锁酒店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "峡口镇": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "峡口镇任桥村": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "峡口镇任桥村二队": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "市医院对面": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "市场监督管理局": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "广武村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "康乐温泉水世界": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "康乐街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "康乐街35-2": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "康乐街63号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "康乐街67号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "康乐街81号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "建民街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "开运竹鞋店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "张岗建材市场24号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "惠源街28号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "意尔康商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "文化北街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "文博商店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新宁百货": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新日电动车": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新疆烤肉王": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "新百CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "新百CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新百广场3F-A-4-5": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新百广场8号楼206、207号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新百广场第一层1F-A-2425": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "新百电器正科店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "新百超市商户": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "晚市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "晨阳包子": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "杨老师商店”": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "正科新百电器": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "正科电器": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 36
+  },
+  "步行街事件": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "汉坝东街178#": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "汉坝东街9-3号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "海润超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "海燕商店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "滨河大道": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "火车站": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "物流中心": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "百姓修脚堂": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "百姓渔村商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "瞿靖镇市场监管所": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "瞿靖镇蒋顶村二组": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "福源堂大药房": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "禹皇家私城": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "禹皇装饰材料市场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "绿源电动车": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "网套加工商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "羽诗芬商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "老凤祥商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "老广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "艾山街": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "英雄联盟音乐餐吧": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "茂盛鲜果副食商店青铜峡市兴盛街叶盛中心卫生院东侧约50米": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街63号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "裕民街道古峡西街219号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道商城西厅": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "裕民街道建民南街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道新民街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道新民路30号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "裕民街道永丰北街261号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道永丰北路": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "裕民街道永丰北路36号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道永丰南街10号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道永丰南街79-81号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道永丰南路9-1号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道汉坝西街343号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "裕民街道裕民街69-37号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "赤道音乐酒吧": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "赵鹏汉餐": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "赵鹏汉餐商户": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "跑狼自行车": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "连湖农场": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "邵岗镇": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 7
+  },
+  "邵岗镇同乐村2村1-72号": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "邵岗镇同富村南区扶贫产业园": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "邵岗镇大沟村三组020号": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "邵岗镇甘城子": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "邵岗镇甘城子村": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "金岸一品": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "金岸一品2期东门口右边": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "金岸一品二期8幢综合2一层": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "鑫利达超市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "鑫旺超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "铜峡市古峡西街沪上阿姨": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "铝厂一村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "铝厂三村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "铝厂北门": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "银川新百电器有限公司青铜峡新百广场店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "银河早市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "长滩路粮食储备库": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "陈袁滩镇滨河新村": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "陈袁滩镇滨河新村242号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 9
+  },
+  "陈袁滩镇黄河外滩香醍湾6幢41号、42号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "陈袁滩黄河公园": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜古镇景区": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜古镇景区温泉商户": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡小坝商城2楼西厅": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡小坝步行街正科对面佬表甜品店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡小坝镇新百广场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡小坝镇新百广场3号楼230号251号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市,青铜峡市铝厂一村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市,青铜峡市铝厂三村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市CCMALL": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "青铜峡市CCMALL广场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "青铜峡市cc-mall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市ccmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市万利食品有限责任公司": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市万家易购超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市三鑫商店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市世纪荣华超市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市东九宾馆": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市东港华庭小区门口": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市中医院对面": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市中医院斜对面": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市乔丹服装专卖店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市五里关火锅店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市亲水湖畔小区斜对面5-8号店铺": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市亲水湖畔小区斜对面5-8号店铺发生时间：2023年消": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市会君杭州小笼包子": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市佳顺便利店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市倍思乐超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市全家福汉餐餐厅": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市六喜珠宝店（个体工商户）": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市兰苑超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市兰馨苑B区南门169号商贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市兰馨苑C区南门口安康街57号商贸房": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市创兴商行": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市利明小区南侧“老面小笼包”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市利民东街149号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市利民东街42号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市利民东街72号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市北环路": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市华莱士快餐小吃店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市古峡东街118号忆江南西侧": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市古峡商业中心1#商业楼": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市古峡商业中心77#": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "青铜峡市古峡西街171号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市古峡西街“爱玛”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市叶盛如意商店": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市叶盛镇": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "青铜峡市叶盛镇三叉路口东侧": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市叶盛镇东街": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市叶盛镇中心街": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市叶盛镇农贸市场东侧": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市叶盛镇龙门村四队": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市吉屋房产中介": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市同兴村市场": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市同心村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市同进村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "青铜峡市启明超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市和府小区东门": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市和福顺餐厅": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市商城东门清真寺对面": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市商城北门": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市商城北门停车场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市商城西门清真寺对面": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市国财便利店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市国财生活超市（个体工商户）": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市塞上江南广场地下负一层超市部分0号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市塞尚江南对面小广场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市大兴超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市大坝电厂": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市天一街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市天一街39号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市天一街42号雅丝美发店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市天一街6号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市姜老太修肤堂（个体工商户）": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市家润购物中心有限公司": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市家私城二楼": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市富汇龙门农家乐": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市富贵芙蓉包子馆": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝CCMALL": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝CCMall二楼": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝CCMall二楼仁梓涵美甲店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市小坝利民西街龙海花园56号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝古峡东街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市小坝古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝商城238号“海绵毡批发”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝商城西侧": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝夜市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝天一街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市小坝天一街139#-2": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝天一街21、23号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 21
+  },
+  "青铜峡市小坝步行街正科商业广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝步行街路口": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝永丰南路72号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝汉坝东街210-1号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝汉坝东街252号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇361专卖店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇中医院北侧“五星电动车”": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇佳旺家私城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇兰馨路046号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇兰馨路12号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇利民西街35号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇利民西街76号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇发生时间：8月30日消费金额：100元": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇商城东南角": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇夜市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇天一街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市小坝镇家旺家私城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇小坝商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇工业园区嘉宝片区亲民路8号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇康乐街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇康乐街115号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇张岗村一队小康楼21号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市小坝镇早市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇朔方路": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇朔方路发生时间：11月19日早晨": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇正科商业广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 22
+  },
+  "青铜峡市小坝镇步行街1号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇步行街1号“蜜雪冰城”正科商业广场店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇步行街发生时间：10月份消费金额：499元": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇步行街路口": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇永丰北街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市小坝镇汉坝东街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇汉坝东街220号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇汉坝西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇汉坝西街与建民北路交叉口": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇滨河大道": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇禹皇家具装饰材料市场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇禹皇家具装饰材料市场“冠珠瓷砖”": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇禹皇装饰材料市场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇粮贸小区附近": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇老广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇老车站": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇蒋南村": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇裕民街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇金三角": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇金岸一品": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市小坝镇金岸一品农贸市场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市小坝镇龙海商业街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "青铜峡市峡口镇": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市峡口镇任桥村": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市峡口镇任桥村二队": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市市医院对面": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市市医院对面发生时间：10月1日消费金额：560元": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市希悦酒店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市广武村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市康乐水世界": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市康乐泳宫娱乐场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市康乐街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 9
+  },
+  "青铜峡市康乐街35-2": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市康乐街63号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市康乐街67号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市康乐街81号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市康乐街发生时间：2025年10月25日消费金额：45": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市康乐超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市建民街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市建龙啃牛骨头店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市开运竹皮鞋店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市张岗市场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市张岗建材市场24号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市强氏喜阿婆粥饼店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市忠鱼商店": {
+    "office_code": "QTX_YESHENG",
+    "office_name": "叶盛市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市慧龙音乐餐厅": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市文化北街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市新宁百货超市有限公司": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市新百CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市新百CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市新百广场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市新百广场3F-A-4-5": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市新百广场8号楼206、207号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市新百广场第一层1F-A-2425": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市星讯通讯店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市晚市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市欣云百货商店": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 39
+  },
+  "青铜峡市步行街事件": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市水云阁洗浴休闲店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市永丰北路": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市汉坝东街178#": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市海润超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市海艳商店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市滨河大道": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市澜遇音乐主题餐吧": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市火车站": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市爱玛电动车行": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市物流中心": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市玲玲超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市登初眼镜有限责任公司": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市百味来牛肉面店（个体工商户）": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市百姓超市": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市瞿靖镇市场监管所": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市瞿靖镇蒋顶村二组": {
+    "office_code": "QTX_DABA",
+    "office_name": "大坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市福满楼餐饮店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市福运超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市第一幼儿园斜对面": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市粮食储备库晓艳便民商店": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市绍平粮油有限公司": {
+    "office_code": "QTX_HEDONG",
+    "office_name": "河东市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市美之然美容店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市美味香卷饼早餐店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市美得亨超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市老广场": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "青铜峡市聚富楼餐厅": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市艾山街": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市艾山街115号": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市芳芳化妆品经销部": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 6
+  },
+  "青铜峡市芳香缘汉餐馆": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市苏扬煎饼生活馆": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市藤蔓妙音阁器乐行": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市蜜雪冰城饮品店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街63号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市裕民街道古峡西街219号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道商城西厅": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市裕民街道建民南街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道新民街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道新民路30号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道步行街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市裕民街道永丰北街261号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道永丰北路": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市裕民街道永丰北路36号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道永丰北路发生时间：2025年8月22日消费金": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道永丰南街10号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道永丰南街79-81号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道永丰南路9-1号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道汉坝西街343号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市裕民街道裕民街69-37号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市赵鹏汉餐馆": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市迎宾超市": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市连湖农场": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市邵岗镇": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 7
+  },
+  "青铜峡市邵岗镇同乐村2村1-72号": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市邵岗镇同富村南区扶贫产业园": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市邵岗镇大沟村三组020号": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市邵岗镇甘城子": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市邵岗镇甘城子村": {
+    "office_code": "QTX_QUJING",
+    "office_name": "瞿靖市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市金岸一品2期东门口右边": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市金岸一品2期东门口右边发生时间：10月4日晚上6点消": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市金岸一品二期8幢综合2一层": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市金岸一品小区": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市金福隆超市": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市鑫利达超市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市鑫吉祥园艺农林服务部": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市钧豪宾馆": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市铝厂": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 12
+  },
+  "青铜峡市铝厂一村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 4
+  },
+  "青铜峡市铝厂三村": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 8
+  },
+  "青铜峡市铝厂北门": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市银河早市": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市长滩路粮食储备库": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市陈袁滩镇滨河新村": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市陈袁滩镇滨河新村242号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 9
+  },
+  "青铜峡市陈袁滩镇黄河外滩香醍湾6幢41号、42号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市陈袁滩黄河公园": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡市雅馨安娜美容养生会所": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市青铜峡市古峡东街118号忆江南西侧": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市青铜峡镇广武村五组": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市青阳酒店对面": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市麦尔乐西饼新百广场店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 3
+  },
+  "青铜峡市龙海商业街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 24
+  },
+  "青铜峡市龙海商业街北边": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市龙海商业街北门": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市龙海商业街发生时间：9月28日下午5点56分消费金额": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市龙海花园58号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市龙海花园90号商贸房": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡市龙海花园北门": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "青铜峡新华百货CCmall": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "青铜峡镇广武村五组": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "顺发通讯": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "魔术丝商户": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "麓枫酒店": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "黄土地滑雪场": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "龙海商业街": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 23
+  },
+  "龙海商业街北边": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "龙海商业街北门": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "龙海花园58号": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "龙海花园90号商贸房": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 2
+  },
+  "龙海花园北门": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 1.0,
+    "support": 5
+  },
+  "小坝商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 0.8889,
+    "support": 8
+  },
+  "古峡西街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 0.875,
+    "support": 7
+  },
+  "青铜峡市金岸一品": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 0.8571,
+    "support": 6
+  },
+  "青铜峡小坝商城2楼西厅电器区169号": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 0.8333,
+    "support": 5
+  },
+  "青铜峡市小坝商城": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 0.8333,
+    "support": 5
+  },
+  "CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 0.8,
+    "support": 4
+  },
+  "裕民街道古峡东街": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 0.8,
+    "support": 4
+  },
+  "青铜峡市CC贸": {
+    "office_code": "QTX_XIAOBA",
+    "office_name": "小坝市场监管所",
+    "confidence": 0.8,
+    "support": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "records": 3854,
+  "accepted_aliases": 556,
+  "conflict_aliases": 3338,
+  "skipped_bureau_records": 2180,
+  "min_support": 2,
+  "min_confidence": 0.8
+}

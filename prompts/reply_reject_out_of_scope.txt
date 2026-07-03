@@ -1,0 +1,3 @@
+您好，经核实，您反映的{reason_summary}事项不属于市场监督管理部门职责范围，建议您向{suggested_department}反映。
+
+依据参考：{regulation_reference}

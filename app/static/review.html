@@ -1,0 +1,1787 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>投诉智能处理工作台</title>
+  <style>
+    :root {
+      --ink: #1b2a2f;
+      --muted: #64757b;
+      --line: #d8e1e4;
+      --paper: #f7f8f6;
+      --panel: #ffffff;
+      --green: #176b52;
+      --blue: #235c8f;
+      --amber: #9a6418;
+      --red: #9d2e2e;
+      --shadow: 0 18px 45px rgba(31, 49, 56, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(27, 42, 47, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(27, 42, 47, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    }
+
+    .shell {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    aside {
+      padding: 28px 24px;
+      background: #17363d;
+      color: #eaf2f1;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      height: 100vh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .seal {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
+      font-weight: 700;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .nav-note {
+      color: #b9cccf;
+      line-height: 1.8;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      padding-top: 22px;
+    }
+
+    .stats {
+      margin-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      padding-top: 20px;
+    }
+
+    .stats h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+      padding: 10px;
+      min-height: 66px;
+    }
+
+    .stat-card span {
+      display: block;
+      color: #b9cccf;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .stat-card strong {
+      display: block;
+      color: #ffffff;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .stat-list {
+      margin-top: 14px;
+    }
+
+    .system-status {
+      margin-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      padding-top: 20px;
+    }
+
+    .system-status h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .status-list li {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 8px;
+      color: #c7d8da;
+      font-size: 12px;
+      line-height: 1.45;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 6px;
+    }
+
+    .status-list span:first-child {
+      color: #90aaae;
+    }
+
+    .status-list strong {
+      color: #ffffff;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .stat-list h3 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: #dce9e8;
+    }
+
+    .stat-list ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .stat-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: #c7d8da;
+      font-size: 12px;
+      line-height: 1.45;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 6px;
+    }
+
+    .stat-list li span:first-child {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stats-error {
+      color: #ffd9d9;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .side-actions {
+      margin-top: 16px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .side-actions button {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+
+    .side-actions button:disabled {
+      opacity: 0.55;
+    }
+
+    .export-result {
+      color: #c7d8da;
+      font-size: 12px;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .rag-box {
+      margin-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      padding-top: 20px;
+    }
+
+    .rag-box h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .rag-box label {
+      color: #dce9e8;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 6px;
+    }
+
+    .rag-box textarea,
+    .rag-box select {
+      min-height: 40px;
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .rag-box textarea {
+      min-height: 94px;
+    }
+
+    .rag-box select option {
+      color: var(--ink);
+    }
+
+    .rag-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .rag-actions button {
+      min-height: 38px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+
+    .rag-result {
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .rag-hit {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+      padding: 10px;
+      color: #dce9e8;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .rag-hit strong {
+      display: block;
+      color: #ffffff;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .rag-hit code {
+      display: block;
+      margin-top: 6px;
+      color: #c7d8da;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    }
+
+    .rag-inline-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .rag-inline-actions button {
+      min-height: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+
+    .rag-reply {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.09);
+      color: #ffffff;
+      padding: 10px;
+      font-size: 12px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .rag-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 14px 0;
+    }
+
+    .law-toolbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .law-toolbar button {
+      min-height: 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      padding: 9px 10px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    main {
+      padding: 28px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+      height: 100vh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .status {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.7);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.95fr) minmax(420px, 1.05fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .panel header {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .panel header h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .panel-body { padding: 18px; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    textarea, input, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fbfcfb;
+      color: var(--ink);
+      padding: 12px;
+      font: inherit;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 260px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    textarea.compact {
+      min-height: 96px;
+    }
+
+    input, select {
+      min-height: 48px;
+      line-height: 1.45;
+    }
+
+    select {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 18px;
+      appearance: auto;
+    }
+
+    textarea:focus, input:focus, select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(35, 92, 143, 0.12);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      background: var(--ink);
+      color: #fff;
+      padding: 11px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 42px;
+    }
+
+    button.secondary {
+      background: #e9eeef;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .path-panel {
+      border: 1px solid var(--line);
+      background: #fbfcfb;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    .path-panel strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .path-panel span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .path-banner {
+      display: none;
+      margin-bottom: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: #f3f7f6;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .path-banner.visible {
+      display: block;
+    }
+
+    .path-banner.accept-mode {
+      color: var(--green);
+      border-color: rgba(23, 107, 82, 0.35);
+      background: #edf7f3;
+    }
+
+    .path-banner.reject-mode {
+      color: var(--red);
+      border-color: rgba(157, 46, 46, 0.35);
+      background: #fbeeee;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: #fbfcfb;
+      padding: 14px;
+      min-height: 92px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 9px;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid currentColor;
+    }
+
+    .accept { color: var(--green); }
+    .reject { color: var(--red); }
+    .review { color: var(--amber); }
+
+    .section {
+      margin-top: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .section h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
+    .reply {
+      line-height: 1.8;
+      white-space: pre-wrap;
+      background: #f7faf9;
+      border: 1px solid var(--line);
+      padding: 14px;
+      min-height: 90px;
+    }
+
+    textarea.reply-editor {
+      min-height: 150px;
+      background: #f7faf9;
+      line-height: 1.8;
+    }
+
+    .reasons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .reasons li {
+      border: 1px solid var(--line);
+      background: #fff8ed;
+      color: var(--amber);
+      padding: 7px 9px;
+      font-size: 13px;
+    }
+
+    .choice {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .choice button {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .choice button.active.accept { background: #e7f3ee; border-color: var(--green); }
+    .choice button.active.reject { background: #f8e8e8; border-color: var(--red); }
+
+    .trace {
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    .hint {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .review-extra {
+      margin-top: 12px;
+      display: none;
+    }
+
+    .review-extra.visible {
+      display: block;
+    }
+
+    .trace-tools {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 10px;
+      align-items: end;
+      width: 100%;
+    }
+
+    .trace-tools input {
+      min-height: 42px;
+      font-family: Consolas, monospace;
+      font-size: 13px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-empty {
+      border: 1px dashed var(--line);
+      background: #fbfcfb;
+      color: var(--muted);
+      padding: 14px;
+      line-height: 1.7;
+    }
+
+    .trace-step {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      border: 1px solid var(--line);
+      background: #fbfcfb;
+      padding: 12px;
+    }
+
+    .trace-index {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      background: #e9eeef;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .trace-step-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .trace-step-title {
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .trace-step-meta {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .trace-step-summary {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      word-break: break-word;
+    }
+
+    .trace-step-summary code {
+      display: block;
+      margin-top: 6px;
+      padding: 9px;
+      background: #eef3f2;
+      color: var(--ink);
+      white-space: pre-wrap;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+    }
+
+    .trace-step.error {
+      border-color: rgba(157, 46, 46, 0.35);
+      background: #fff7f7;
+    }
+
+    .trace-step.degraded .trace-index {
+      background: #fff1d9;
+      color: var(--amber);
+    }
+
+    @media (max-width: 980px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { display: none; }
+      main { padding: 16px; height: auto; min-height: 100vh; }
+      .workspace { grid-template-columns: 1fr; }
+      .result-grid { grid-template-columns: 1fr; }
+      .row, .choice, .trace-tools { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">
+        <div class="seal">市监</div>
+        <h1>投诉智能处理<br />人工复核工作台</h1>
+      </div>
+      <div class="nav-note">
+        <p>模型只给出辅助建议。最终是否受理以工作人员确认为准。</p>
+        <p>低置信度、职责外、敏感事项会自动标记提示原因。</p>
+      </div>
+      <div class="rag-box">
+        <h2>智能问答助手</h2>
+        <label for="ragQuery">搜索内容</label>
+        <textarea id="ragQuery" placeholder="输入不受理原因、群众问题，或法条关键词，例如：物业费公示、七日退货、明码标价"></textarea>
+        <label for="ragReasonType">不受理原因类型</label>
+        <select id="ragReasonType"></select>
+        <div class="rag-actions">
+          <button id="ragRejectBtn">搜退回回复</button>
+          <button id="ragLawBtn">搜法条讲解</button>
+        </div>
+        <div class="rag-divider"></div>
+        <label for="lawDocumentSelect">法规全文</label>
+        <div class="law-toolbar">
+          <select id="lawDocumentSelect"></select>
+          <button id="lawFullTextBtn">查看全文</button>
+        </div>
+        <div class="export-result" id="ragStatus">用于不受理回复依据搜索和法条知识查询。</div>
+        <div class="rag-result" id="ragResult"></div>
+      </div>
+      <div class="system-status">
+        <h2>系统运行状态</h2>
+        <ul class="status-list" id="systemStatusList">
+          <li><span>状态</span><strong>加载中</strong></li>
+        </ul>
+      </div>
+      <div class="stats">
+        <h2>办理统计</h2>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span>已确认</span>
+            <strong id="statTotal">-</strong>
+          </div>
+          <div class="stat-card">
+            <span>受理</span>
+            <strong id="statAccepted">-</strong>
+          </div>
+          <div class="stat-card">
+            <span>不受理</span>
+            <strong id="statRejected">-</strong>
+          </div>
+          <div class="stat-card">
+            <span>未标明</span>
+            <strong id="statUnknown">-</strong>
+          </div>
+        </div>
+        <div class="stat-list">
+          <h3>不受理原因</h3>
+          <ul id="statReasons"><li><span>暂无数据</span><strong>-</strong></li></ul>
+        </div>
+        <div class="stat-list">
+          <h3>市场监管所</h3>
+          <ul id="statOffices"><li><span>暂无数据</span><strong>-</strong></li></ul>
+        </div>
+        <div class="stats-error" id="statsError"></div>
+        <div class="side-actions">
+          <button id="exportTrainingBtn">导出训练样本</button>
+          <div class="export-result" id="exportTrainingResult">把已确认数据导出成后续训练用 CSV。</div>
+          <button id="replayAcceptBtn">批量回放评估</button>
+          <div class="export-result" id="replayAcceptResult">用训练样本回放当前是否受理模型，查看错判和复核比例。</div>
+          <button id="mineAcceptRulesBtn">挖掘规则候选</button>
+          <div class="export-result" id="mineAcceptRulesResult">从复核样本里找高受理率/高不受理率关键词组合。</div>
+          <button id="simulateAcceptRulesBtn">模拟候选规则</button>
+          <div class="export-result" id="simulateAcceptRulesResult">模拟高受理候选上线后能减少多少复核、会新增多少错判。</div>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <h2>是否受理分析</h2>
+        <div class="status" id="status">就绪</div>
+      </div>
+
+      <div class="workspace">
+        <section class="panel">
+          <header>
+            <h3>投诉内容</h3>
+          </header>
+          <div class="panel-body">
+            <label for="problemText">具体问题</label>
+            <textarea id="problemText" placeholder="粘贴群众投诉的具体问题内容"></textarea>
+
+            <div class="row">
+              <div>
+                <label for="enterpriseAddress">企业地址</label>
+                <input id="enterpriseAddress" placeholder="可选" />
+              </div>
+              <div>
+                <label for="incidentLocation">事发地</label>
+                <input id="incidentLocation" placeholder="可选" />
+              </div>
+            </div>
+
+            <div class="actions">
+              <button id="analyzeBtn">分析</button>
+              <button class="secondary" id="clearBtn">清空</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <header>
+            <h3>分析结果与办理</h3>
+            <span class="trace" id="traceId">trace: -</span>
+          </header>
+          <div class="panel-body">
+            <div class="path-banner" id="pathBanner">当前路径：等待分析</div>
+
+            <div class="result-grid">
+              <div class="metric">
+                <span>模型建议</span>
+                <strong id="decision">-</strong>
+              </div>
+              <div class="metric">
+                <span>置信度</span>
+                <strong id="confidence">-</strong>
+              </div>
+            </div>
+
+            <div class="path-panel hidden" id="acceptPathPanel">
+              <span>受理路径：分派建议</span>
+              <strong id="dispatch">-</strong>
+              <div class="hint" id="dispatchSummary">系统会根据地址或具体问题里的地点给出分派建议。</div>
+            </div>
+
+            <div class="path-panel hidden" id="rejectPathPanel">
+              <span>不受理路径：原因建议</span>
+              <strong id="rejectReasonSuggestion">-</strong>
+              <div class="hint" id="rejectReasonSummary">系统会给出第16条原因建议，最终以人工复核为准。</div>
+            </div>
+
+            <div class="section hidden" id="replySection">
+              <h4 id="replyTitle">退回回复内容</h4>
+              <textarea class="reply-editor" id="replyText" placeholder="不受理时生成退回回复，可在这里修改后复制。"></textarea>
+              <div class="actions">
+                <button class="secondary" id="copyReplyBtn">复制退回回复</button>
+              </div>
+              <div class="hint" id="copyReplyHint">不受理时可修改后复制到业务系统。</div>
+            </div>
+
+            <div class="section">
+              <h4>提示原因</h4>
+              <ul class="reasons" id="reasons"></ul>
+            </div>
+
+            <div class="section">
+              <h4>办理结果</h4>
+              <div class="choice">
+                <button id="confirmAccept" class="accept">受理</button>
+                <button id="confirmReject" class="reject">不受理</button>
+              </div>
+              <div class="review-extra" id="rejectReasonBox">
+                <label for="reasonTypeSelect">不受理原因</label>
+                <select id="reasonTypeSelect"></select>
+                <div class="hint">选择依据新版《市场监督管理投诉举报处理办法》第十六条。</div>
+                <label for="rejectDetailText" style="margin-top: 12px;">不受理具体原因</label>
+                <textarea class="compact" id="rejectDetailText" placeholder="请人工填写具体原因，例如：兽药及兽用产品由农业农村局监管，建议由农业农村局负责核实处理。"></textarea>
+              </div>
+              <div class="section" id="dispatchReviewBox">
+                <h4>人工确认分派机构</h4>
+                <label for="officeSelect">市场监管所</label>
+                <select id="officeSelect"></select>
+                <div class="hint" id="dispatchHint">分析后默认选中系统分派建议，可人工调整。</div>
+              </div>
+              <div class="actions">
+                <button id="saveReviewBtn" disabled>保存办理结果</button>
+              </div>
+              <div class="hint" id="reviewHint">分析后确认受理或不受理，再保存办理结果。</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <header>
+          <h3>执行过程追踪</h3>
+          <div class="trace-tools">
+            <div>
+              <label for="traceLookupInput">Trace ID</label>
+              <input id="traceLookupInput" placeholder="粘贴 trace_id 可查看历史执行过程" />
+            </div>
+            <button class="secondary" id="loadTraceBtn">查看 Trace</button>
+          </div>
+        </header>
+        <div class="panel-body">
+          <div class="timeline" id="traceTimeline">
+            <div class="timeline-empty">分析完成后，这里会显示每个 Agent 的输入摘要、输出摘要、耗时、置信度和是否降级。</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const state = { traceId: null, finalChoice: null, lastResult: null };
+    const offices = [
+      { code: "QTX_XIAOBA", name: "小坝市场监管所" },
+      { code: "QTX_YUMIN", name: "裕民市场监管所" },
+      { code: "QTX_HEXI", name: "河西市场监管所" },
+      { code: "QTX_HEDONG", name: "河东市场监管所" },
+      { code: "QTX_QUJING", name: "瞿靖市场监管所" },
+      { code: "QTX_YESHENG", name: "叶盛市场监管所" },
+      { code: "QTX_DABA", name: "大坝市场监管所" },
+      { code: "QTX_BUREAU", name: "青铜峡市市场监督管理局" }
+    ];
+    const reasonTypes = [
+      {
+        value: "ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY",
+        label: "第16条第1项：职责外或本机关无权限"
+      },
+      {
+        value: "ARTICLE16_2_ALREADY_ACCEPTED_OR_PROCESSED",
+        label: "第16条第2项：同一争议已被受理或处理"
+      },
+      {
+        value: "ARTICLE16_3_NOT_CONSUMER_DISPUTE",
+        label: "第16条第3项：非生活消费争议"
+      },
+      {
+        value: "ARTICLE16_4_EXPIRED",
+        label: "第16条第4项：超过三年投诉时效"
+      },
+      {
+        value: "ARTICLE16_5_MISSING_OR_FALSE_MATERIALS",
+        label: "第16条第5项：材料缺失或虚假"
+      },
+      {
+        value: "ARTICLE16_6_IMPERSONATION_OR_REFUSE_VERIFY",
+        label: "第16条第6项：冒名或拒不配合身份核验"
+      },
+      {
+        value: "ARTICLE16_7_OTHER_LEGAL_REASONS",
+        label: "第16条第7项：其他法定不予受理情形"
+      }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+
+    function reasonLabel(value) {
+      const item = reasonTypes.find(reason => reason.value === value);
+      return item ? item.label : (value || "-");
+    }
+
+    function agentLabel(name) {
+      const labels = {
+        preprocess: "预处理",
+        classify: "是否受理分类",
+        reject_reason: "不受理原因判断",
+        retrieve: "依据检索",
+        dispatch: "分派判断",
+        reply: "退回回复处理",
+        validate: "复核校验"
+      };
+      return labels[name] || name;
+    }
+
+    function compactJson(value) {
+      if (!value || (typeof value === "object" && !Object.keys(value).length)) {
+        return "无";
+      }
+      return JSON.stringify(value, null, 2);
+    }
+
+    function renderTraceSteps(steps) {
+      const timeline = $("traceTimeline");
+      timeline.innerHTML = "";
+      if (!steps || !steps.length) {
+        const empty = document.createElement("div");
+        empty.className = "timeline-empty";
+        empty.textContent = "暂无执行步骤。";
+        timeline.appendChild(empty);
+        return;
+      }
+      steps.forEach((step, index) => {
+        const item = document.createElement("div");
+        item.className = "trace-step";
+        if (step.error) item.classList.add("error");
+        if (step.degraded) item.classList.add("degraded");
+
+        const number = document.createElement("div");
+        number.className = "trace-index";
+        number.textContent = index + 1;
+
+        const body = document.createElement("div");
+        const header = document.createElement("div");
+        header.className = "trace-step-header";
+
+        const title = document.createElement("div");
+        title.className = "trace-step-title";
+        title.textContent = agentLabel(step.name);
+
+        const meta = document.createElement("div");
+        meta.className = "trace-step-meta";
+        const confidence = step.confidence === null || step.confidence === undefined ? "-" : `${Math.round(step.confidence * 100)}%`;
+        meta.textContent = `${step.duration_ms ?? "-"} ms / 置信度 ${confidence}`;
+
+        const summary = document.createElement("div");
+        summary.className = "trace-step-summary";
+        const inputLabel = document.createElement("span");
+        inputLabel.textContent = "输入摘要：";
+        const inputCode = document.createElement("code");
+        inputCode.textContent = compactJson(step.input_summary);
+        const outputLabel = document.createElement("span");
+        outputLabel.textContent = "输出摘要：";
+        const outputCode = document.createElement("code");
+        outputCode.textContent = compactJson(step.output_summary);
+        summary.appendChild(inputLabel);
+        summary.appendChild(inputCode);
+        summary.appendChild(outputLabel);
+        summary.appendChild(outputCode);
+        if (step.error) {
+          const errorLabel = document.createElement("span");
+          errorLabel.textContent = "异常：";
+          const errorCode = document.createElement("code");
+          errorCode.textContent = step.error;
+          summary.appendChild(errorLabel);
+          summary.appendChild(errorCode);
+        }
+
+        header.appendChild(title);
+        header.appendChild(meta);
+        body.appendChild(header);
+        body.appendChild(summary);
+        item.appendChild(number);
+        item.appendChild(body);
+        timeline.appendChild(item);
+      });
+    }
+
+    function renderCountList(targetId, counts, labeler = (value) => value) {
+      const target = $(targetId);
+      const entries = Object.entries(counts || {});
+      target.innerHTML = "";
+      if (!entries.length) {
+        const li = document.createElement("li");
+        li.innerHTML = "<span>暂无数据</span><strong>-</strong>";
+        target.appendChild(li);
+        return;
+      }
+      for (const [name, count] of entries) {
+        const li = document.createElement("li");
+        const label = document.createElement("span");
+        const value = document.createElement("strong");
+        label.textContent = labeler(name);
+        value.textContent = count;
+        li.appendChild(label);
+        li.appendChild(value);
+        target.appendChild(li);
+      }
+    }
+
+    async function loadReviewStats() {
+      try {
+        const response = await fetch("/api/v1/reviews/stats");
+        if (!response.ok) throw new Error(await response.text());
+        const stats = await response.json();
+        $("statTotal").textContent = stats.total ?? 0;
+        $("statAccepted").textContent = stats.accepted ?? 0;
+        $("statRejected").textContent = stats.rejected ?? 0;
+        $("statUnknown").textContent = stats.unknown ?? 0;
+        renderCountList("statReasons", stats.reason_counts, reasonLabel);
+        renderCountList("statOffices", stats.office_counts);
+        $("statsError").textContent = "";
+      } catch (error) {
+        $("statsError").textContent = "统计加载失败，请稍后刷新页面。";
+      }
+    }
+
+    async function exportTrainingData() {
+      const button = $("exportTrainingBtn");
+      const resultBox = $("exportTrainingResult");
+      button.disabled = true;
+      button.textContent = "导出中";
+      resultBox.textContent = "正在整理复核数据，请稍等。";
+      try {
+        const response = await fetch("/api/v1/reviews/export-training", { method: "POST" });
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        const accept = result.accept_training || {};
+        const rejectReason = result.reject_reason_training || {};
+        resultBox.textContent =
+          `已导出。是否受理训练集：${accept.merged_rows ?? 0} 条，确认新增 ${accept.review_rows_exported ?? 0} 条；` +
+          `不受理原因训练集：${rejectReason.merged_rows ?? 0} 条，确认新增 ${rejectReason.review_rows_exported ?? 0} 条。` +
+          `文件在 ${accept.output_csv || "data/training"} 和 ${rejectReason.output_csv || "data/training"}。`;
+      } catch (error) {
+        resultBox.textContent = "导出失败：" + error.message;
+      } finally {
+        button.disabled = false;
+        button.textContent = "导出训练样本";
+      }
+    }
+
+    async function replayAcceptModel() {
+      const button = $("replayAcceptBtn");
+      const resultBox = $("replayAcceptResult");
+      button.disabled = true;
+      button.textContent = "回放中";
+      resultBox.textContent = "正在批量运行当前是否受理模型，请稍等。";
+      try {
+        const response = await fetch("/api/v1/evaluation/replay-accept", { method: "POST" });
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        const decisions = result.decision_counts || {};
+        const matrix = result.auto_confusion_matrix || [[0, 0], [0, 0]];
+        resultBox.textContent =
+          `已回放 ${result.evaluated_rows ?? 0} 条。` +
+          `建议受理 ${decisions.ACCEPT ?? 0} 条，建议不受理 ${decisions.REJECT ?? 0} 条，人工复核 ${decisions.REVIEW ?? 0} 条。` +
+          `自动判断准确率 ${result.auto_accuracy ?? "-"}，复核比例 ${Math.round((result.review_rate ?? 0) * 100)}%。` +
+          `混淆矩阵[不受理/受理]：${JSON.stringify(matrix)}。` +
+          `错判文件：${result.outputs?.errors_csv || "data/evaluation/accept_replay_errors.csv"}。`;
+      } catch (error) {
+        resultBox.textContent = "回放失败：" + error.message;
+      } finally {
+        button.disabled = false;
+        button.textContent = "批量回放评估";
+      }
+    }
+
+    async function mineAcceptRules() {
+      const button = $("mineAcceptRulesBtn");
+      const resultBox = $("mineAcceptRulesResult");
+      button.disabled = true;
+      button.textContent = "挖掘中";
+      resultBox.textContent = "正在分析复核样本里的关键词组合。";
+      try {
+        const response = await fetch("/api/v1/evaluation/mine-accept-rules", { method: "POST" });
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        const acceptTop = (result.top_high_accept || []).slice(0, 3)
+          .map((item) => `${item.pattern}(${Math.round(item.accept_rate * 100)}%, ${item.total}条)`)
+          .join("；") || "暂无";
+        const rejectTop = (result.top_high_reject || []).slice(0, 3)
+          .map((item) => `${item.pattern}(${Math.round(item.reject_rate * 100)}%, ${item.total}条)`)
+          .join("；") || "暂无";
+        resultBox.textContent =
+          `候选 ${result.candidate_count ?? 0} 组。高受理：${acceptTop}。` +
+          `高不受理：${rejectTop}。文件：${result.outputs?.high_accept_csv || "data/evaluation/accept_rule_candidates_high_accept.csv"}。`;
+      } catch (error) {
+        resultBox.textContent = "挖掘失败：" + error.message;
+      } finally {
+        button.disabled = false;
+        button.textContent = "挖掘规则候选";
+      }
+    }
+
+    async function simulateAcceptRules() {
+      const button = $("simulateAcceptRulesBtn");
+      const resultBox = $("simulateAcceptRulesResult");
+      button.disabled = true;
+      button.textContent = "模拟中";
+      resultBox.textContent = "正在模拟候选规则，不会改变当前系统判断。";
+      try {
+        const response = await fetch("/api/v1/evaluation/simulate-accept-rules", { method: "POST" });
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        const top = (result.candidate_results || []).slice(0, 3)
+          .map((item) => `${item.pattern}: 命中${item.hit_rows}条/误判${item.false_accept_hits}条`)
+          .join("；") || "暂无候选";
+        resultBox.textContent =
+          `可减少复核 ${result.auto_accept_rows ?? 0} 条，新增误自动受理 ${result.false_accept_rows ?? 0} 条，` +
+          `整体准确率 ${Math.round((result.precision_if_auto_accept_all ?? 0) * 100)}%。${top}。` +
+          `误判样本：${result.outputs?.false_accept_csv || "data/evaluation/accept_rule_simulation_false_accept.csv"}。`;
+      } catch (error) {
+        resultBox.textContent = "模拟失败：" + error.message;
+      } finally {
+        button.disabled = false;
+        button.textContent = "模拟候选规则";
+      }
+    }
+
+    function renderSystemStatus(status) {
+      const rows = [
+        ["调度器", `${status.orchestrator_backend} / ${status.orchestrator_class}`],
+        ["RAG", status.rag?.chroma_available ? "Chroma 已启用" : "关键词回退"],
+        ["Embedding", status.rag?.embedding_provider || "-"],
+        ["法规条文", `${status.rag?.knowledge_entries ?? 0} 条`],
+        ["法规文件", `${status.rag?.law_documents ?? 0} 部`],
+        ["受理模型", status.models?.accept_model_exists ? status.models.accept_model_dir : "未找到"],
+        ["原因模型", status.models?.reject_reason_model_exists ? status.models.reject_reason_model_dir : "未找到"],
+      ];
+      const target = $("systemStatusList");
+      target.innerHTML = "";
+      for (const [name, value] of rows) {
+        const li = document.createElement("li");
+        const label = document.createElement("span");
+        const strong = document.createElement("strong");
+        label.textContent = name;
+        strong.textContent = value;
+        li.appendChild(label);
+        li.appendChild(strong);
+        target.appendChild(li);
+      }
+    }
+
+    async function loadSystemStatus() {
+      try {
+        const response = await fetch("/api/v1/system/status");
+        if (!response.ok) throw new Error(await response.text());
+        renderSystemStatus(await response.json());
+      } catch (error) {
+        $("systemStatusList").innerHTML = "<li><span>状态</span><strong>加载失败</strong></li>";
+      }
+    }
+
+    function initOfficeSelect() {
+      const select = $("officeSelect");
+      select.innerHTML = "";
+      for (const office of offices) {
+        const option = document.createElement("option");
+        option.value = office.code;
+        option.textContent = office.name;
+        option.dataset.name = office.name;
+        select.appendChild(option);
+      }
+    }
+
+    function initReasonTypeSelect() {
+      const select = $("reasonTypeSelect");
+      select.innerHTML = "";
+      const ragSelect = $("ragReasonType");
+      ragSelect.innerHTML = "";
+      const unknownOption = document.createElement("option");
+      unknownOption.value = "UNKNOWN";
+      unknownOption.textContent = "自动判断/不限原因";
+      ragSelect.appendChild(unknownOption);
+      for (const reason of reasonTypes) {
+        const option = document.createElement("option");
+        option.value = reason.value;
+        option.textContent = reason.label;
+        select.appendChild(option);
+        const ragOption = option.cloneNode(true);
+        ragSelect.appendChild(ragOption);
+      }
+    }
+
+    function renderRagResult(result) {
+      const container = $("ragResult");
+      container.innerHTML = "";
+      if (result.reply_suggestion) {
+        const reply = document.createElement("div");
+        reply.className = "rag-reply";
+        reply.textContent = `回复参考：\n${result.reply_suggestion}`;
+        const actions = document.createElement("div");
+        actions.className = "rag-inline-actions";
+        actions.appendChild(makeSmallButton("复制回复", () => copyText(result.reply_suggestion, "已复制退回回复参考。")));
+        actions.appendChild(makeSmallButton("填入退回回复", () => applyRagReply(result.reply_suggestion)));
+        reply.appendChild(actions);
+        container.appendChild(reply);
+      }
+      if (!result.hits || !result.hits.length) {
+        const empty = document.createElement("div");
+        empty.className = "rag-hit";
+        empty.textContent = "没有检索到相关依据。";
+        container.appendChild(empty);
+        return;
+      }
+      for (const hit of result.hits) {
+        const item = document.createElement("div");
+        item.className = "rag-hit";
+        const title = document.createElement("strong");
+        title.textContent = `${hit.title}（${Math.round((hit.score || 0) * 100)}%）`;
+        const meta = document.createElement("div");
+        meta.textContent = `${hit.source || "知识库"}${hit.law_status ? " / " + hit.law_status : ""}${hit.suggested_department ? " / 建议部门：" + hit.suggested_department : ""}`;
+        const explanation = document.createElement("div");
+        explanation.textContent = hit.explanation || "可作为办理依据参考。";
+        const content = document.createElement("code");
+        content.textContent = hit.content || "";
+        const actions = document.createElement("div");
+        actions.className = "rag-inline-actions";
+        actions.appendChild(makeSmallButton("复制引用", () => copyText(formatCitation(hit), "已复制法规引用。")));
+        actions.appendChild(makeSmallButton("填入办理", () => applyRagHit(hit)));
+        item.appendChild(title);
+        item.appendChild(meta);
+        item.appendChild(explanation);
+        item.appendChild(content);
+        item.appendChild(actions);
+        container.appendChild(item);
+      }
+    }
+
+    function renderLawFullText(lawDocument) {
+      const container = $("ragResult");
+      container.innerHTML = "";
+      const header = document.createElement("div");
+      header.className = "rag-reply";
+      header.textContent = `${lawDocument.title}\n${lawDocument.source || "知识库"}${lawDocument.law_status ? " / " + lawDocument.law_status : ""}\n共 ${lawDocument.articles.length} 条`;
+      container.appendChild(header);
+      for (const article of lawDocument.articles) {
+        const item = document.createElement("div");
+        item.className = "rag-hit";
+        const title = document.createElement("strong");
+        title.textContent = article.title;
+        const content = document.createElement("code");
+        content.textContent = article.content || "";
+        const actions = document.createElement("div");
+        actions.className = "rag-inline-actions";
+        actions.appendChild(makeSmallButton("复制引用", () => copyText(formatCitation(article), "已复制法规引用。")));
+        actions.appendChild(makeSmallButton("填入办理", () => applyRagHit(article)));
+        item.appendChild(title);
+        item.appendChild(content);
+        item.appendChild(actions);
+        container.appendChild(item);
+      }
+    }
+
+    function makeSmallButton(text, onClick) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = text;
+      button.addEventListener("click", onClick);
+      return button;
+    }
+
+    function formatCitation(hit) {
+      return `${hit.title}\n${hit.content || ""}`;
+    }
+
+    async function copyText(text, successMessage) {
+      if (!text) {
+        $("ragStatus").textContent = "没有可复制的内容。";
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        $("ragStatus").textContent = successMessage;
+      } catch (error) {
+        $("ragStatus").textContent = "浏览器未允许自动复制，请手动选中文本复制。";
+      }
+    }
+
+    function applyRagReply(replyText) {
+      choose("REJECT");
+      $("replyText").value = replyText || "";
+      if (!$("rejectDetailText").value.trim()) {
+        $("rejectDetailText").value = replyText || "";
+      }
+      $("reviewHint").textContent = "已把智能问答助手的回复填入不受理办理区，请人工核对后保存。";
+    }
+
+    function applyRagHit(hit) {
+      const citation = formatCitation(hit);
+      choose("REJECT");
+      $("rejectDetailText").value = citation;
+      if (!$("replyText").value.trim()) {
+        $("replyText").value = `经初步判断，该事项需结合职责进一步核实处理。依据参考：${hit.title}。`;
+      }
+      $("reviewHint").textContent = "已把法规引用填入不受理具体原因，请人工核对后保存。";
+    }
+
+    async function runRagSearch(mode) {
+      const query = $("ragQuery").value.trim();
+      if (!query) {
+        $("ragStatus").textContent = "请先输入要搜索的内容。";
+        return;
+      }
+      const endpoint = mode === "reject" ? "/api/v1/rag/reject-reply" : "/api/v1/rag/law-search";
+      $("ragStatus").textContent = "检索中";
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query,
+            reason_type: $("ragReasonType").value,
+            top_k: 5
+          })
+        });
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        renderRagResult(result);
+        $("ragStatus").textContent = mode === "reject" ? "已生成退回回复参考。" : "已检索法条和讲解。";
+      } catch (error) {
+        $("ragStatus").textContent = "RAG 检索失败：" + error.message;
+      }
+    }
+
+    async function loadLawDocuments() {
+      const select = $("lawDocumentSelect");
+      select.innerHTML = "";
+      try {
+        const response = await fetch("/api/v1/rag/laws");
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        for (const doc of result.documents || []) {
+          const option = window.document.createElement("option");
+          option.value = doc.doc_id;
+          option.textContent = `${doc.title}（${doc.article_count}条）`;
+          select.appendChild(option);
+        }
+      } catch (error) {
+        const option = window.document.createElement("option");
+        option.value = "";
+        option.textContent = "法规目录加载失败";
+        select.appendChild(option);
+      }
+    }
+
+    async function loadLawFullText() {
+      const docId = $("lawDocumentSelect").value;
+      if (!docId) {
+        $("ragStatus").textContent = "请先选择法规。";
+        return;
+      }
+      $("ragStatus").textContent = "正在加载法规全文";
+      try {
+        const response = await fetch(`/api/v1/rag/laws/${encodeURIComponent(docId)}`);
+        if (!response.ok) throw new Error(await response.text());
+        const lawDocument = await response.json();
+        renderLawFullText(lawDocument);
+        $("ragStatus").textContent = "已加载法规全文。";
+      } catch (error) {
+        $("ragStatus").textContent = "法规全文加载失败：" + error.message;
+      }
+    }
+
+    function setStatus(text) {
+      $("status").textContent = text;
+    }
+
+    function setPathMode(mode) {
+      $("acceptPathPanel").classList.toggle("hidden", mode !== "ACCEPT");
+      $("rejectPathPanel").classList.toggle("hidden", mode !== "REJECT");
+      $("replySection").classList.toggle("hidden", mode !== "REJECT");
+      $("pathBanner").classList.toggle("visible", Boolean(mode));
+      $("pathBanner").classList.toggle("accept-mode", mode === "ACCEPT");
+      $("pathBanner").classList.toggle("reject-mode", mode === "REJECT");
+      if (mode === "ACCEPT") {
+        $("pathBanner").textContent = "当前路径：受理后分派";
+      } else if (mode === "REJECT") {
+        $("pathBanner").textContent = "当前路径：不受理退回";
+      } else {
+        $("pathBanner").textContent = "当前路径：等待分析";
+      }
+    }
+
+    function setDecision(result) {
+      const suggestion = result.classification.accept_suggestion;
+      const source = result.classification.decision_source;
+      const rejectSuggestion = result.reject_reason_suggestion;
+      const reasonType = rejectSuggestion?.reason_type || result.classification.reason_type;
+      const pathMode = rejectSuggestion || (reasonType && reasonType !== "UNKNOWN") ? "REJECT" : "ACCEPT";
+      const map = { ACCEPT: "建议受理", REJECT: "建议不受理", REVIEW: "建议复核" };
+      $("decision").innerHTML = `<span class="badge ${suggestion.toLowerCase()}">${map[suggestion] || suggestion}</span>`;
+      $("confidence").textContent = `${Math.round(result.classification.confidence * 100)}% (${source})`;
+      setPathMode(pathMode);
+      if (rejectSuggestion) {
+        $("rejectReasonSuggestion").textContent = `${reasonLabel(rejectSuggestion.reason_type)} ${Math.round(rejectSuggestion.confidence * 100)}%`;
+        $("rejectReasonSummary").textContent = rejectSuggestion.note || "请人工确认不受理原因。";
+      } else {
+        $("rejectReasonSuggestion").textContent = "-";
+        $("rejectReasonSummary").textContent = "系统会给出第16条原因建议，最终以人工复核为准。";
+      }
+      if (reasonType && reasonType !== "UNKNOWN") {
+        const hasReasonOption = Array.from($("reasonTypeSelect").options).some(option => option.value === reasonType);
+        if (hasReasonOption) {
+          $("reasonTypeSelect").value = reasonType;
+        }
+      }
+      $("dispatch").textContent = result.dispatch ? result.dispatch.office_name : "-";
+      if (result.dispatch) {
+        const select = $("officeSelect");
+        const hasOption = Array.from(select.options).some(option => option.value === result.dispatch.office_code);
+        if (hasOption) {
+          select.value = result.dispatch.office_code;
+        }
+        $("dispatchHint").textContent = `系统建议：${result.dispatch.office_name}，匹配规则：${result.dispatch.matched_rule || "-"}，置信度：${Math.round(result.dispatch.confidence * 100)}%。`;
+        $("dispatchSummary").textContent = `匹配规则：${result.dispatch.matched_rule || "-"}，置信度：${Math.round(result.dispatch.confidence * 100)}%。`;
+      } else {
+        $("dispatchHint").textContent = "本次无分派建议，请人工选择机构。";
+        $("dispatchSummary").textContent = "本次无分派建议。";
+      }
+      $("replyText").value = pathMode === "REJECT" ? (result.reply_draft.text || "") : "";
+      $("traceId").textContent = `trace: ${result.trace_id}`;
+      const reasons = $("reasons");
+      reasons.innerHTML = "";
+      const items = result.review_reasons.length ? result.review_reasons : ["无需强制复核"];
+      for (const reason of items) {
+        const li = document.createElement("li");
+        li.textContent = reason;
+        reasons.appendChild(li);
+      }
+    }
+
+    async function analyze() {
+      const problemText = $("problemText").value.trim();
+      if (!problemText) {
+        setStatus("请先输入具体问题");
+        return;
+      }
+      setStatus("分析中");
+      $("analyzeBtn").disabled = true;
+      try {
+        const response = await fetch("/api/v1/complaints/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            problem_text: problemText,
+            enterprise_address: $("enterpriseAddress").value.trim() || null,
+            incident_location: $("incidentLocation").value.trim() || null
+          })
+        });
+        if (!response.ok) throw new Error(await response.text());
+        const result = await response.json();
+        state.traceId = result.trace_id;
+        state.lastResult = result;
+        state.finalChoice = null;
+        $("confirmAccept").classList.remove("active");
+        $("confirmReject").classList.remove("active");
+        $("traceLookupInput").value = result.trace_id;
+        $("saveReviewBtn").disabled = true;
+        $("saveReviewBtn").textContent = "保存办理结果";
+        setDecision(result);
+        renderTraceSteps(result.agent_steps);
+        if (result.classification.accept_suggestion === "ACCEPT") {
+          choose("ACCEPT");
+          $("reviewHint").textContent = "已按模型建议预选“受理”，确认后将分派到所。";
+        } else if (result.classification.accept_suggestion === "REJECT") {
+          choose("REJECT");
+          $("reviewHint").textContent = "已按模型建议预选“不受理”，请确认退回原因和回复内容。";
+        } else {
+          $("reviewHint").textContent = "模型建议人工确认，请先选择“受理”或“不受理”。";
+        }
+        setStatus("分析完成");
+      } catch (error) {
+        setStatus("分析失败");
+        $("reviewHint").textContent = error.message;
+      } finally {
+        $("analyzeBtn").disabled = false;
+      }
+    }
+
+    async function loadTraceById() {
+      const traceId = $("traceLookupInput").value.trim();
+      if (!traceId) {
+        setStatus("请先输入 trace_id");
+        return;
+      }
+      setStatus("查询 Trace 中");
+      try {
+        const response = await fetch(`/api/v1/traces/${encodeURIComponent(traceId)}`);
+        if (!response.ok) throw new Error(await response.text());
+        const trace = await response.json();
+        state.traceId = trace.trace_id;
+        state.lastResult = trace;
+        $("traceId").textContent = `trace: ${trace.trace_id}`;
+        renderTraceSteps(trace.agent_steps);
+        setDecision(trace);
+        setStatus("Trace 已加载");
+      } catch (error) {
+        setStatus("Trace 查询失败");
+        const timeline = $("traceTimeline");
+        timeline.innerHTML = "";
+        const empty = document.createElement("div");
+        empty.className = "timeline-empty";
+        empty.textContent = "没有找到这个 trace_id，或服务还没有重启加载最新代码。";
+        timeline.appendChild(empty);
+      }
+    }
+
+    function choose(choice) {
+      state.finalChoice = choice;
+      $("confirmAccept").classList.toggle("active", choice === "ACCEPT");
+      $("confirmReject").classList.toggle("active", choice === "REJECT");
+      $("rejectReasonBox").classList.toggle("visible", choice === "REJECT");
+      $("dispatchReviewBox").style.display = choice === "REJECT" ? "none" : "block";
+      setPathMode(choice);
+      if (choice === "REJECT" && !$("rejectDetailText").value.trim()) {
+        $("rejectDetailText").value = state.lastResult?.reply_draft?.text || "";
+      }
+      if (choice === "ACCEPT") {
+        $("replyText").value = "";
+      } else {
+        $("replyText").value = state.lastResult?.reply_draft?.text || "";
+      }
+      $("saveReviewBtn").disabled = !state.traceId;
+    }
+
+    async function copyReplyText() {
+      const text = $("replyText").value.trim();
+      if (!text) {
+        $("copyReplyHint").textContent = "没有可复制的退回回复内容。";
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        $("copyReplyHint").textContent = "已复制退回回复。";
+      } catch (error) {
+        $("replyText").focus();
+        $("replyText").select();
+        $("copyReplyHint").textContent = "浏览器未允许自动复制，已选中文本，请按 Ctrl+C。";
+      }
+    }
+
+    async function saveReview() {
+      if (!state.traceId) {
+        $("reviewHint").textContent = "请先点击“分析”，得到 trace 后再保存。";
+        return;
+      }
+      if (!state.finalChoice) {
+        $("reviewHint").textContent = "请先选择办理结果：受理或不受理。";
+        return;
+      }
+      if (state.finalChoice === "REJECT" && !$("rejectDetailText").value.trim()) {
+        $("reviewHint").textContent = "请填写不受理具体原因后再保存。";
+        return;
+      }
+      if (state.finalChoice === "REJECT" && !$("replyText").value.trim()) {
+        $("reviewHint").textContent = "请填写退回回复内容后再保存。";
+        return;
+      }
+      setStatus("保存中");
+      $("saveReviewBtn").disabled = true;
+      $("saveReviewBtn").textContent = "保存中";
+      try {
+        const selectedOffice = $("officeSelect").selectedOptions[0];
+        const saveDispatch = state.finalChoice === "ACCEPT";
+        const response = await fetch(`/api/v1/reviews/${state.traceId}/confirm`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            is_market: state.finalChoice === "ACCEPT",
+            reason_type: state.finalChoice === "ACCEPT" ? "UNKNOWN" : $("reasonTypeSelect").value,
+            reject_detail: state.finalChoice === "ACCEPT" ? null : $("rejectDetailText").value.trim(),
+            office_code: saveDispatch ? $("officeSelect").value : null,
+            office_name: saveDispatch && selectedOffice ? selectedOffice.dataset.name : null,
+            reply_text: state.finalChoice === "ACCEPT" ? null : $("replyText").value.trim(),
+            reviewer: "web_workbench"
+          })
+        });
+        if (!response.ok) throw new Error(await response.text());
+        setStatus("办理结果已保存");
+        $("saveReviewBtn").textContent = "已保存";
+        $("reviewHint").textContent = `已保存办理结果：${state.finalChoice === "ACCEPT" ? "受理并分派" : "不受理退回"}`;
+        await loadReviewStats();
+      } catch (error) {
+        setStatus("保存失败");
+        $("reviewHint").textContent = error.message;
+        $("saveReviewBtn").disabled = false;
+        $("saveReviewBtn").textContent = "保存办理结果";
+      }
+    }
+
+    $("analyzeBtn").addEventListener("click", analyze);
+    $("clearBtn").addEventListener("click", () => {
+      $("problemText").value = "";
+      $("enterpriseAddress").value = "";
+      $("incidentLocation").value = "";
+      $("decision").textContent = "-";
+      $("confidence").textContent = "-";
+      $("dispatch").textContent = "-";
+      $("rejectReasonSuggestion").textContent = "-";
+      setPathMode(null);
+      $("dispatchSummary").textContent = "系统会根据地址或具体问题里的地点给出分派建议。";
+      $("rejectReasonSummary").textContent = "系统会给出第16条原因建议，最终以人工复核为准。";
+      $("replyText").value = "";
+      $("replySection").classList.add("hidden");
+      $("traceId").textContent = "trace: -";
+      $("traceLookupInput").value = "";
+      renderTraceSteps([]);
+      $("reasons").innerHTML = "";
+      $("officeSelect").value = "QTX_XIAOBA";
+      $("reasonTypeSelect").value = "ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY";
+      $("ragReasonType").value = "UNKNOWN";
+      $("ragQuery").value = "";
+      $("ragResult").innerHTML = "";
+      $("ragStatus").textContent = "用于不受理回复依据搜索和法条知识查询。";
+      $("rejectDetailText").value = "";
+      $("rejectReasonBox").classList.remove("visible");
+      $("dispatchReviewBox").style.display = "block";
+      $("dispatchHint").textContent = "分析后默认选中系统分派建议，可人工调整。";
+      $("reviewHint").textContent = "分析后确认受理或不受理，再保存办理结果。";
+      $("saveReviewBtn").textContent = "保存办理结果";
+      $("saveReviewBtn").disabled = true;
+      state.traceId = null;
+      state.finalChoice = null;
+      setStatus("就绪");
+    });
+    $("confirmAccept").addEventListener("click", () => choose("ACCEPT"));
+    $("confirmReject").addEventListener("click", () => choose("REJECT"));
+    $("saveReviewBtn").addEventListener("click", saveReview);
+    $("copyReplyBtn").addEventListener("click", copyReplyText);
+    $("exportTrainingBtn").addEventListener("click", exportTrainingData);
+    $("replayAcceptBtn").addEventListener("click", replayAcceptModel);
+    $("mineAcceptRulesBtn").addEventListener("click", mineAcceptRules);
+    $("simulateAcceptRulesBtn").addEventListener("click", simulateAcceptRules);
+    $("loadTraceBtn").addEventListener("click", loadTraceById);
+    $("ragRejectBtn").addEventListener("click", () => runRagSearch("reject"));
+    $("ragLawBtn").addEventListener("click", () => runRagSearch("law"));
+    $("lawFullTextBtn").addEventListener("click", loadLawFullText);
+    initOfficeSelect();
+    initReasonTypeSelect();
+    loadLawDocuments();
+    loadSystemStatus();
+    loadReviewStats();
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "火辣辣饭店": {
+    "office_code": "QTX_YUMIN",
+    "office_name": "裕民市场监管所",
+    "confidence": 1.0,
+    "support": "manual"
+  },
+  "青铜峡铝厂生活区": {
+    "office_code": "QTX_HEXI",
+    "office_name": "河西市场监管所",
+    "confidence": 1.0,
+    "support": "manual"
+  }
+}

@@ -1,0 +1,32 @@
+[project]
+name = "market-complaint-agent"
+version = "0.1.0"
+description = "Local-first multi-agent MVP for market-regulation complaint handling."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "openpyxl>=3.1.0",
+    "scikit-learn>=1.4.0",
+    "joblib>=1.3.0",
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+    "torch>=2.2.0",
+    "transformers>=4.40.0",
+    "langgraph>=1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "httpx>=0.27.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+exclude = ["data*"]
