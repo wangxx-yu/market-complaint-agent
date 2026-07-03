@@ -12,6 +12,7 @@ from app.agents.langgraph_orchestrator import LangGraphOrchestrator
 from app.agents.llm_agent import LLMAgentOrchestrator, OllamaClient
 from app.agents.orchestrator import Orchestrator
 from app.agents.reply import ReplyAgent
+from app.agents.debate import DebateOrchestrator
 from app.agents.retrieval import RetrievalAgent
 from app.core.training_config import ACCEPT_MODEL_DIR
 from app.core.enums import AcceptSuggestion, DecisionSource, ReasonType
@@ -163,6 +164,30 @@ async def analyze_complaint_llm_stream(request: ComplaintAnalyzeRequest):
             "X-Accel-Buffering": "no",
         },
     )
+
+
+
+@router.post("/complaints/debate")
+def debate_complaint(request: ComplaintAnalyzeRequest) -> dict:
+    """Multi-Agent Debate: 双 Agent 独立分类 + 交叉验证。
+
+    两个 Agent 独立分析同一投诉，结果一致则采纳，分歧则触发仲裁并标记人工复核。
+    """
+    from app.core.schemas import ClassificationResult
+
+    verdict = debate_orchestrator.debate(request)
+    classification = verdict.classification
+    return {
+        "trace_id": "debate_" + classification.reason_type.value,
+        "classification": classification.model_dump(mode="json"),
+        "agent_a": verdict.agent_a_result.model_dump(mode="json"),
+        "agent_b": verdict.agent_b_result.model_dump(mode="json"),
+        "consensus": verdict.consensus,
+        "debate_required": verdict.debate_required,
+        "judge_reason": verdict.judge_reason,
+        "review_required": verdict.debate_required or classification.accept_suggestion == "REVIEW",
+        "review_reasons": verdict.review_reasons,
+    }
 
 
 @router.post("/reviews/{trace_id}/confirm", response_model=ReviewConfirmResponse)

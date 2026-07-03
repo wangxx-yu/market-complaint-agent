@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import TypedDict
 from uuid import uuid4
 
@@ -83,6 +84,8 @@ class LangGraphOrchestrator:
         graph.add_node("reject_reason", self._reject_reason)
         graph.add_node("dispatch", self._dispatch)
         graph.add_node("retrieve", self._retrieve)
+        graph.add_node("fanout_accept", self._fanout_accept)
+        graph.add_node("fanout_reject", self._fanout_reject)
         graph.add_node("reply", self._reply)
         graph.add_node("validate", self._validate)
         graph.add_node("audit_log", self._audit_log)
@@ -93,15 +96,18 @@ class LangGraphOrchestrator:
             "classify",
             self._route_after_classify,
             {
+                "fanout_accept": "fanout_accept",
+                "fanout_reject": "fanout_reject",
                 "reject_reason": "reject_reason",
-                "dispatch": "dispatch",
                 "retrieve": "retrieve",
                 "reply": "reply",
             },
         )
+        graph.add_edge("fanout_accept", "reply")
+        graph.add_edge("fanout_reject", "reply")
         graph.add_edge("reject_reason", "retrieve")
-        graph.add_edge("dispatch", "reply")
         graph.add_edge("retrieve", "reply")
+        graph.add_edge("dispatch", "reply")
         graph.add_edge("reply", "validate")
         graph.add_edge("validate", "audit_log")
         graph.add_edge("audit_log", END)
@@ -293,6 +299,7 @@ class LangGraphOrchestrator:
 
     @staticmethod
     def _route_after_classify(state: ComplaintGraphState) -> str:
+        """Route to parallel fanout nodes when both dispatch and retrieve are needed."""
         classification = state["classification"]
         if "classifier_error" in classification.evidence_fields:
             return "reply"
@@ -300,6 +307,121 @@ class LangGraphOrchestrator:
         has_reject_reason = classification.reason_type != ReasonType.UNKNOWN
         if invalid_input:
             return "reply"
+        if classification.is_market and not has_reject_reason:
+            # ACCEPT — parallel: dispatch + retrieve
+            return "fanout_accept"
         if not classification.is_market or has_reject_reason:
-            return "reject_reason" if (not classification.is_market or has_reject_reason) else "retrieve"
-        return "dispatch"
+            # REJECT — parallel: reject_reason + retrieve
+            return "fanout_reject"
+        return "reply"
+
+    def _fanout_accept(self, state: ComplaintGraphState) -> ComplaintGraphState:
+        """Parallel fan-out for ACCEPT path: dispatch ∥ retrieve."""
+        clean_request = state["clean_request"]
+
+        def run_dispatch():
+            with agent_step(state["steps"], "dispatch",
+                            {"address": " ".join(filter(None, [clean_request.incident_location, clean_request.enterprise_address]))[:160]}) as step:
+                try:
+                    result = self.dispatch_agent.dispatch(clean_request)
+                except Exception as exc:
+                    result = DispatchResult(
+                        office_code="", office_name="待人工选择", confidence=0.0,
+                        decision_source=DecisionSource.FALLBACK, matched_rule="dispatch_error", needs_review=True,
+                    )
+                    step["error"] = str(exc)
+                    step["degraded"] = True
+                    state["review_reasons"].append("分派 Agent 异常，需人工选择市场监管所")
+                step["output_summary"] = result.model_dump(mode="json")
+                step["confidence"] = result.confidence
+                if result.needs_review:
+                    state["review_reasons"].append("分派结果置信度不足或使用默认所")
+                return result
+
+        def run_retrieve():
+            classification = state["classification"]
+            with agent_step(state["steps"], "retrieve", {"reason_type": classification.reason_type}) as step:
+                try:
+                    hits = self.retrieval_agent.retrieve(classification.reason_type, clean_request.problem_text)
+                except Exception as exc:
+                    hits = []
+                    step["error"] = str(exc)
+                    step["degraded"] = True
+                retrieval_status = dict(getattr(self.retrieval_agent, "last_status", {}))
+                step["output_summary"] = {
+                    "hits": [hit.model_dump(mode="json") for hit in hits],
+                    "retrieval_status": retrieval_status,
+                }
+                step["confidence"] = hits[0].score if hits else None
+                step["degraded"] = bool(retrieval_status.get("degraded"))
+                if retrieval_status.get("fallback_reason"):
+                    state["review_reasons"].append(str(retrieval_status["fallback_reason"]))
+                return hits
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            future_dispatch = executor.submit(run_dispatch)
+            future_retrieve = executor.submit(run_retrieve)
+            dispatch_result = future_dispatch.result()
+            retrieve_result = future_retrieve.result()
+
+        state["dispatch"] = dispatch_result
+        state["retrieval_hits"] = retrieve_result
+        return state
+
+    def _fanout_reject(self, state: ComplaintGraphState) -> ComplaintGraphState:
+        """Parallel fan-out for REJECT path: reject_reason ∥ retrieve."""
+        clean_request = state["clean_request"]
+        classification = state["classification"]
+
+        if classification.reason_type == ReasonType.ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY:
+            state["review_reasons"].append("职责外事项需人工确认转办部门")
+
+        def run_reject_reason():
+            with agent_step(state["steps"], "reject_reason",
+                            {"reason_type": classification.reason_type, "accept_suggestion": classification.accept_suggestion}) as step:
+                try:
+                    suggestion = self.reject_reason_agent.suggest(clean_request, classification)
+                except Exception as exc:
+                    suggestion = RejectReasonSuggestion(
+                        reason_type=ReasonType.UNKNOWN, confidence=0.0,
+                        decision_source=DecisionSource.FALLBACK,
+                        evidence_fields=["reject_reason_agent_error"],
+                        needs_review=True, note="不受理原因建议失败，请人工填写具体原因。",
+                    )
+                    step["error"] = str(exc)
+                    step["degraded"] = True
+                step["output_summary"] = suggestion.model_dump(mode="json") if suggestion else {}
+                step["confidence"] = suggestion.confidence if suggestion else None
+                if suggestion and suggestion.needs_review:
+                    state["review_reasons"].append(suggestion.note or "不受理原因建议需人工确认")
+                return suggestion
+
+        def run_retrieve():
+            with agent_step(state["steps"], "retrieve", {"reason_type": classification.reason_type}) as step:
+                try:
+                    hits = self.retrieval_agent.retrieve(classification.reason_type, clean_request.problem_text)
+                except Exception as exc:
+                    hits = []
+                    step["error"] = str(exc)
+                    step["degraded"] = True
+                    state["review_reasons"].append("RAG 检索异常，回复依据需人工核对")
+                retrieval_status = dict(getattr(self.retrieval_agent, "last_status", {}))
+                step["output_summary"] = {
+                    "hits": [hit.model_dump(mode="json") for hit in hits],
+                    "retrieval_status": retrieval_status,
+                }
+                step["confidence"] = hits[0].score if hits else None
+                step["degraded"] = bool(retrieval_status.get("degraded"))
+                if retrieval_status.get("fallback_reason"):
+                    state["review_reasons"].append(str(retrieval_status["fallback_reason"]))
+                return hits
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            future_reject = executor.submit(run_reject_reason)
+            future_retrieve = executor.submit(run_retrieve)
+            reject_suggestion = future_reject.result()
+            retrieve_result = future_retrieve.result()
+
+        state["reject_reason_suggestion"] = reject_suggestion
+        state["retrieval_hits"] = retrieve_result
+        return state

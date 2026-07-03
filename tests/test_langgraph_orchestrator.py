@@ -48,7 +48,7 @@ def test_langgraph_orchestrator_accept_path_dispatches() -> None:
     assert response.dispatch is not None
     assert response.reply_draft.template_id == "accept_no_return_reply"
     assert "dispatch" in step_names
-    assert "retrieve" not in step_names
+    assert "retrieve" in step_names  # now runs in parallel with dispatch
 
 
 def test_langgraph_orchestrator_reject_path_retrieves_basis() -> None:

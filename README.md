@@ -1,111 +1,159 @@
-# 市场监管投诉智能处理系统 MVP
+# 市场监管投诉智能处理系统
 
-本项目实现一个本地优先、人机协同的投诉智能处理系统首版。它提供 FastAPI 接口、规则基线 Agent、历史 Excel 导入、Trace 追踪和人工复核回写能力。
+[![Python](https://img.shields.io/badge/python-3.11+-blue)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111+-green)](https://fastapi.tiangolo.com)
+[![LangGraph](https://img.shields.io/badge/LangGraph-1.2+-orange)](https://langchain-ai.github.io/langgraph/)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-## 快速启动
+> 本地优先、人机协同的多智能体市场监管投诉处理系统。
+> 支持规则基线 + LLM ReAct Agent 双模式，LangGraph 并行编排，内置评估框架与安全护栏。
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+---
+
+## 🏗 架构
+
+```mermaid
+graph TD
+    A[FastAPI /api/v1] --> B{Orchestrator}
+    B -->|规则模式| C[LangGraph DAG]
+    B -->|LLM 模式| D[ReAct Agent]
+    
+    C --> E[preprocess]
+    E --> F[classify]
+    F -->|ACCEPT| G[dispatch ∥ retrieve]
+    F -->|REJECT| H[reject_reason ∥ retrieve]
+    F -->|ERROR| I[reply fallback]
+    G --> J[join]
+    H --> J
+    J --> K[reply]
+    I --> K
+    K --> L[validate]
+    L --> M[GuardrailsAgent]
+    M --> N[audit_log → JSONL]
+    
+    D --> O[OllamaClient]
+    O --> P[ToolRegistry]
+    P --> Q[classify_complaint]
+    P --> R[search_regulations]
+    P --> S[dispatch_to_office]
+    P --> T[generate_reply]
+    
+    N --> U[人工复核 workbench]
+    U --> V[reviews.jsonl]
+    V --> W[FewShotMemory]
+    W -.-> D
+```
+
+## ⚡ 快速启动
+
+### Docker（推荐）
+
+```bash
+# 仅启动规则模式 Agent
+docker compose up -d
+
+# 含 Ollama LLM Agent（需 GPU/CPU 支持 qwen2.5:7b）
+docker compose --profile llm up -d
+```
+
+接口文档：`http://localhost:8000/docs`
+
+### 本地开发
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
-python -m app.tools.ingest_excel --data-dir . --out data/runtime
 uvicorn app.main:app --reload
 ```
 
-接口文档：`http://127.0.0.1:8000/docs`
+## 🧠 核心能力
 
-## 训练是否受理模型
+| 模块 | 说明 |
+|------|------|
+| **双模式编排** | LangGraph DAG（规则基线）+ ReAct Agent（LLM tool-calling）|
+| **并行 Agent 执行** | 受理路径下 dispatch 与 retrieve 并行 fan-out，降低延迟 |
+| **5 个专家 Agent** | Classifier / RejectReason / Dispatch / Retrieval / Reply |
+| **RAG 混合检索** | ChromaDB 向量 → 关键词规则降级，Chroma 不可用时自动回退 |
+| **人机协同** | 低置信度(<0.72)、敏感词、降级场景 → 人工复核工作台 |
+| **全链路追踪** | 每步 Agent 耗时/置信度/错误 → JSONL + `/metrics` Prometheus |
+| **安全护栏** | GuardrailsAgent：输入 PII 检测 + 输出法规引用合规校验 |
+| **Agent 记忆** | ConversationMemory（短期窗口）+ FewShotMemory（历史案例检索）|
+| **评估框架** | 15 条标注 golden dataset，分类/分派/检索/端到端自动化评估 |
 
-默认训练样本路径配置在 `app/core/training_config.py`：
+## 📡 接口
 
-```python
-ACCEPT_TRAINING_CSV = Path("C:/Users/wangxinwx/Desktop/模型构建训练项目/training_data_balanced.csv")
-ACCEPT_MODEL_DIR = Path("models/accept_v4")
+| 方法 | 端点 | 说明 |
+|------|------|------|
+| `POST` | `/api/v1/complaints/analyze` | 规则模式分析（LangGraph DAG）|
+| `POST` | `/api/v1/complaints/analyze-llm` | LLM ReAct Agent 分析 |
+| `POST` | `/api/v1/complaints/analyze-llm/stream` | LLM Agent SSE 流式输出 |
+| `POST` | `/api/v1/reviews/{trace_id}/confirm` | 人工复核确认 |
+| `GET` | `/api/v1/traces/{trace_id}` | 全链路执行追踪 |
+| `GET` | `/api/v1/reviews/stats` | 复核统计 |
+| `GET` | `/api/v1/system/status` | 系统运行状态 |
+| `GET` | `/metrics` | Prometheus 指标 |
+| `POST` | `/api/v1/reviews/export-training` | 导出复核训练数据 |
+| `POST` | `/api/v1/rag/reject-reply` | RAG 法规检索 + 退回回复 |
+| `GET` | `/api/v1/rag/laws` | 法规文档列表 |
+
+## 🧪 评估
+
+```bash
+# 快速抽查（5条样本）
+python -m eval.run_evaluation --quick
+
+# 完整评估 + 导出结果
+python -m eval.run_evaluation --output eval/results.json
 ```
 
-### 当前稳定模型：TF-IDF + LogisticRegression
+评估维度：分类准确率 / 分派正确率 / 检索命中率 / 端到端准确率 / 延迟 p50 p95
 
-这是当前系统默认使用的轻量模型，训练快，适合样本量还不大的阶段。可以直接运行：
+## 🛡 安全
 
-```powershell
+- **输入护栏**：PII 检测（手机号/身份证/银行卡）+ 无效输入过滤
+- **输出护栏**：敏感措辞检测 + 法规条文引用校验
+- **降级策略**：LLM 不可用时自动回退规则引擎，不中断服务
+
+## 📁 目录
+
+```
+app/
+├── agents/          # 7 个 Agent（含 Guardrails + Memory）
+├── api/routes.py    # 15 个 REST 端点
+├── core/            # 配置/模型/日志/指标/Prompt 加载
+├── tools/           # 训练/评估/数据导入/规则挖掘
+├── static/          # 人工复核工作台 (HTML)
+eval/                # 评估框架 + golden dataset
+prompts/             # Prompt 模板（5 个）
+data/                # 运行时数据（dispatch/knowledge/chroma）
+models/              # 训练好的 ML 模型
+```
+
+## ⚙ 配置
+
+通过 `app/core/config.py` 的 `Settings` 类，所有选项支持环境变量覆盖：
+
+| 变量 | 默认值 | 说明 |
+|------|--------|------|
+| `ORCHESTRATOR_BACKEND` | `langgraph` | 编排器（langgraph / simple）|
+| `OLLAMA_BASE_URL` | `http://localhost:11434/v1` | LLM 服务地址 |
+| `OLLAMA_MODEL` | `qwen2.5:7b` | LLM 模型名 |
+| `ACCEPT_TRAINING_CSV` | `data/training/...` | 训练数据路径 |
+| `ACCEPT_MODEL_DIR` | `models/accept_v4` | 模型保存目录 |
+| `USE_CHROMA_RETRIEVAL` | `true` | 启用向量检索 |
+| `EMBEDDING_PROVIDER` | `hash` | 嵌入方案（hash / bge）|
+
+## 📝 训练模型
+
+```bash
+# 稳定模型: TF-IDF + LogisticRegression（推荐）
 python -m app.tools.train_accept_model
+
+# 实验模型: BERT
+python -m app.tools.train_accept_bert --epochs 3 --batch-size 8
 ```
 
-如果以后换训练集，改 `ACCEPT_TRAINING_CSV`，或者临时用 `--csv` 覆盖。
+## 📄 License
 
-训练完成后，`ClassifierAgent` 会优先使用 `ACCEPT_MODEL_DIR/accept_model.joblib` 做是否受理判断。接口返回里的 `"decision_source": "MODEL"` 表示这次分类来自训练模型；如果模型概率处于阈值中间区间，会返回 `REVIEW` 并要求人工复核。
-
-### 实验模型：BERT
-
-BERT 用来提升语义理解能力，适合后续和当前稳定模型做效果对比。它不会自动替换当前线上模型，默认保存到：
-
-```text
-models/accept_bert_v1
-```
-
-首次运行需要下载 `bert-base-chinese`，如果网络慢会等待较久。CPU 也能训练，但会比 GPU 慢。
-
-```powershell
-python -m app.tools.train_accept_bert `
-  --csv "C:/Users/wangxinwx/Desktop/模型构建训练项目/training_data_balanced.csv" `
-  --out-dir models/accept_bert_v1 `
-  --epochs 3 `
-  --batch-size 8
-```
-
-训练完成后，会生成：
-
-- `models/accept_bert_v1/metrics.json`：准确率、混淆矩阵、各类别指标。
-- `models/accept_bert_v1/test_predictions.csv`：测试集每条预测结果。
-- `models/accept_bert_v1/test_errors.csv`：预测错误样本，后续重点复核。
-- `models/accept_bert_v1/metadata.json`：模型说明和阈值。
-
-预测一条投诉：
-
-```powershell
-python -m app.tools.predict_accept_bert `
-  --model-dir models/accept_bert_v1 `
-  --text "市民在饭店就餐发现食品变质，要求退款赔偿"
-```
-
-判断是否值得切换到 BERT，重点看 `metrics.json` 里的 `REJECT` 召回率和 `test_errors.csv`。如果不受理样本仍然很少，BERT 不一定比轻量模型稳定。
-
-## 主要接口
-
-- `POST /api/v1/complaints/analyze`：分析投诉，返回受理、分派、回复建议和执行链路。
-- `POST /api/v1/reviews/{trace_id}/confirm`：人工确认或修正结果，并写入复核样本。
-- `GET /api/v1/traces/{trace_id}`：查看全链路执行记录。
-- `GET /health`：健康检查。
-
-## 数据说明
-
-`app.tools.ingest_excel` 会读取当前目录下的业务信息 Excel，生成：
-
-- `data/runtime/complaints.jsonl`：标准化历史投诉样本。
-- `data/runtime/address_aliases.json`：从历史处理机构和地址中挖掘的候选映射。
-- `data/runtime/reply_templates.json`：从反馈内容中抽取的常见模板候选。
-
-首版不会直接替代人工决定。低置信度、敏感词、默认分派、职责外、LLM 降级等场景都会触发人工复核。
-
-## 人工维护分派规则
-
-人工地址分派规则配置在：
-
-```text
-data/dispatch/manual_dispatch_rules.json
-```
-
-格式：
-
-```json
-{
-  "某某小区": {
-    "office_code": "QTX_YUMIN",
-    "office_name": "裕民市场监管所",
-    "confidence": 1.0,
-    "support": "manual"
-  }
-}
-```
-
-这份文件优先级最高，适合手工补充或纠正地址分派。修改后重启服务生效。
+MIT
