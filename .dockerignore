@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+
+# IDE
+.idea/
+.vscode/
+
+# Rivet
+.rivet/
+.tmp/
+
+# Data files (except structured configs)
+*.xlsx
+data/runtime/
+data/chroma/
+data/training/
+data/evaluation/
+
+# Models (large binary files — mounted as volume)
+models/*.joblib
+models/*.bin
+models/*.pt
+models/*.safetensors
+models/embeddings/
+
+# Git
+.git/
+.gitignore

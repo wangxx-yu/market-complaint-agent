@@ -1,0 +1,54 @@
+# ── 市场监管投诉智能处理系统 ──
+# docker compose up 一键启动全部服务
+
+version: "3.9"
+
+services:
+  # ── Ollama LLM 服务（可选，不启动也能用规则模式） ──
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mca-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    profiles:
+      - llm
+
+  # ── 主应用 ──
+  app:
+    build: .
+    container_name: mca-app
+    ports:
+      - "8000:8000"
+    environment:
+      # LLM Agent 配置（需要 ollama 服务时启用）
+      - OLLAMA_BASE_URL=http://ollama:11434/v1
+      - OLLAMA_MODEL=qwen2.5:7b
+      # 训练数据路径
+      - ACCEPT_TRAINING_CSV=data/training/training_data_balanced.csv
+      - ACCEPT_MODEL_DIR=models/accept_v4
+      # Agent 编排后端（langgraph / simple）
+      - ORCHESTRATOR_BACKEND=langgraph
+      # 向量检索
+      - USE_CHROMA_RETRIEVAL=true
+      - EMBEDDING_PROVIDER=hash
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
+    depends_on: []
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  ollama_data:
