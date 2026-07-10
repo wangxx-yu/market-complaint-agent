@@ -1,0 +1,99 @@
+rules:
+  - id: dispatch_xiaoba
+    name: 小坝市场监管所
+    keywords:
+      - 小坝镇
+      - 小坝
+    office_code: QTX_XIAOBA
+    office_name: 小坝市场监管所
+    priority: 88
+    source: 地址关键词匹配
+    note: 小坝镇范围归小坝所管辖
+
+  - id: dispatch_yumin
+    name: 裕民市场监管所
+    keywords:
+      - 裕民
+    office_code: QTX_YUMIN
+    office_name: 裕民市场监管所
+    priority: 88
+    source: 地址关键词匹配
+
+  - id: dispatch_hexi
+    name: 河西市场监管所
+    keywords:
+      - 河西
+      - 铝厂
+    office_code: QTX_HEXI
+    office_name: 河西市场监管所
+    priority: 88
+    source: 地址关键词匹配
+    note: 铝厂地区归河西所管辖
+
+  - id: dispatch_hedong
+    name: 河东市场监管所
+    keywords:
+      - 河东
+    office_code: QTX_HEDONG
+    office_name: 河东市场监管所
+    priority: 88
+    source: 地址关键词匹配
+
+  - id: dispatch_qujing
+    name: 瞿靖市场监管所
+    keywords:
+      - 瞿靖
+    office_code: QTX_QUJING
+    office_name: 瞿靖市场监管所
+    priority: 88
+    source: 地址关键词匹配
+
+  - id: dispatch_yesheng
+    name: 叶盛市场监管所
+    keywords:
+      - 叶盛
+    office_code: QTX_YESHENG
+    office_name: 叶盛市场监管所
+    priority: 88
+    source: 地址关键词匹配
+
+  - id: dispatch_daba
+    name: 大坝市场监管所
+    keywords:
+      - 大坝
+    office_code: QTX_DABA
+    office_name: 大坝市场监管所
+    priority: 88
+    source: 地址关键词匹配
+
+  - id: dispatch_drug_bureau
+    name: 药品事项分派局机关
+    keywords:
+      - 药品
+      - 药店
+      - 药房
+      - 药企
+      - 药师
+      - 处方药
+      - 非处方药
+      - 中成药
+      - 中药饮片
+      - 保健药
+      - 感冒药
+      - 降压药
+      - 胰岛素
+      - 疫苗
+      - 医疗器械
+    office_code: QTX_BUREAU
+    office_name: 青铜峡市市场监督管理局
+    priority: 90
+    source: 事项类型规则
+    note: 药品/医疗器械事项建议分派至局机关，排除兽药兽用等农业农村职责
+    exclude_keywords:
+      - 兽药
+      - 兽用
+      - 牛用
+      - 饲料
+      - 饲料添加剂
+      - 养殖
+      - 畜牧

@@ -1,0 +1,73 @@
+rules:
+  - id: accept_prepaid_service
+    name: 预付卡/健身退费
+    keywords:
+      - 健身
+      - 健身房
+      - 健身俱乐部
+      - 会员卡
+      - 年卡
+      - 预付卡
+      - 储值卡
+      - 充值
+      - 退费
+      - 退卡
+      - 私教
+      - 课程
+    decision: ACCEPT
+    reason_type: UNKNOWN
+    review_required: false
+    priority: 85
+    source: 市场监管投诉处理经验规则
+    note: 预付式消费退费纠纷属于消费者权益争议
+    context_hint: 需配合退费/退款/退卡/消费/会员卡/年卡触发受理
+
+  - id: accept_market_general
+    name: 市场监管通用受理
+    keywords:
+      - 食品
+      - 药
+      - 价格
+      - 退货
+      - 退款
+      - 质量
+      - 虚假宣传
+      - 三包
+      - 餐饮
+      - 超市
+      - 发票
+      - 计量
+      - 广告
+      - 消费
+      - 商家
+    decision: ACCEPT
+    reason_type: UNKNOWN
+    review_required: false
+    priority: 70
+    source: 市场监管投诉处理经验规则
+    note: 投诉内容包含市场监管领域关键词（模型不可用时的兜底规则）
+
+  - id: accept_drug_special
+    name: 药品/医疗器械事项
+    keywords:
+      - 药品
+      - 药店
+      - 药房
+      - 药企
+      - 药师
+      - 处方药
+      - 非处方药
+      - 中成药
+      - 中药饮片
+      - 保健药
+      - 感冒药
+      - 降压药
+      - 胰岛素
+      - 疫苗
+      - 医疗器械
+    decision: ACCEPT
+    reason_type: UNKNOWN
+    review_required: false
+    priority: 90
+    source: 市场监管投诉处理经验规则
+    note: 药品/医疗器械事项属于市场监管核心职责，建议分派至局机关

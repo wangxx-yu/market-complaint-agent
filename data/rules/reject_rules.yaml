@@ -1,0 +1,203 @@
+rules:
+  - id: out_of_scope_agriculture
+    name: 农业农村职责外
+    keywords:
+      - 农药
+      - 农用机械
+      - 农机
+      - 农产品生产
+      - 牛用
+      - 兽用
+      - 兽药
+      - 兽医
+      - 饲料
+      - 饲料添加剂
+      - 养殖
+      - 畜牧
+      - 牲畜
+      - 牛打架
+      - 农业农村局
+    decision: REVIEW
+    reason_type: ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY
+    review_required: true
+    priority: 80
+    source: 市场监管投诉处理经验规则
+    suggest_department: 农业农村局
+    note: 涉及农药、兽药、农机、养殖等农业农村部门职责
+
+  - id: out_of_scope_housing
+    name: 住建物业职责外
+    keywords:
+      - 物业费
+      - 物业管理
+      - 自行车棚
+      - 车棚
+      - 公租房
+      - 房管局
+      - 水费
+      - 供热
+      - 供暖
+      - 住建局
+      - 物监办
+    decision: REVIEW
+    reason_type: ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY
+    review_required: true
+    priority: 80
+    source: 市场监管投诉处理经验规则
+    suggest_department: 住建部门
+    note: 涉及物业、公租房、供水供暖等住建部门职责
+
+  - id: out_of_scope_public_security
+    name: 公安治安职责外
+    keywords:
+      - 派出所
+      - 公安
+      - 报警
+      - 打架
+      - 人身伤害
+      - 故意伤害
+      - 盗窃
+    decision: REVIEW
+    reason_type: ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY
+    review_required: true
+    priority: 80
+    source: 市场监管投诉处理经验规则
+    suggest_department: 公安机关
+    note: 涉及治安、人身伤害或公安已处理类职责外规则
+
+  - id: out_of_scope_tobacco
+    name: 烟草专卖职责外
+    keywords:
+      - 香烟
+      - 卷烟
+      - 烟草
+      - 烟草专卖
+    decision: REVIEW
+    reason_type: ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY
+    review_required: true
+    priority: 80
+    source: 市场监管投诉处理经验规则
+    suggest_department: 烟草专卖部门
+    note: 涉及烟草专卖类职责外规则
+
+  - id: out_of_scope_general
+    name: 通用职责外关键词
+    keywords:
+      - 物业
+      - 供暖
+      - 自来水
+      - 供水
+      - 燃气开户
+      - 交通事故
+      - 医保
+      - 社保
+      - 教育局
+      - 住建局
+      - 城管
+      - 公安
+      - 交警
+      - 法院
+      - 劳动监察
+    decision: REVIEW
+    reason_type: ARTICLE16_1_OUT_OF_SCOPE_OR_NO_AUTHORITY
+    review_required: true
+    priority: 78
+    source: 市场监管投诉处理经验规则
+    note: 命中第16条可能不予受理规则——职责外关键词
+
+  - id: already_accepted_or_processed
+    name: 已受理/已处理/重复投诉
+    keywords:
+      - 已受理
+      - 已经受理
+      - 重复投诉
+      - 已经处理
+      - 已处理
+      - 同一事项
+      - 再次投诉
+      - 法院已受理
+      - 仲裁已受理
+      - 消协已处理
+    decision: REVIEW
+    reason_type: ARTICLE16_2_ALREADY_ACCEPTED_OR_PROCESSED
+    review_required: true
+    priority: 86
+    source: 市场监管投诉处理经验规则
+    note: 命中第16条可能不予受理规则——已受理或已处理
+
+  - id: not_consumer_dispute
+    name: 非消费者权益争议
+    keywords:
+      - 劳动纠纷
+      - 工资
+      - 拖欠工资
+      - 邻里
+      - 借款
+      - 贷款
+      - 租房
+      - 房屋租赁
+      - 医疗纠纷
+      - 投资
+      - 加盟
+      - 合伙
+      - 经营纠纷
+      - 工程款
+      - 货款
+    decision: REVIEW
+    reason_type: ARTICLE16_3_NOT_CONSUMER_DISPUTE
+    review_required: true
+    priority: 86
+    source: 市场监管投诉处理经验规则
+    note: 命中第16条可能不予受理规则——非消费者权益争议
+
+  - id: expired_claim
+    name: 超过法定时效
+    keywords:
+      - 超过三年
+      - 三年前
+      - 多年以前
+      - 十年前
+      - 已过三年
+    decision: REVIEW
+    reason_type: ARTICLE16_4_EXPIRED
+    review_required: true
+    priority: 86
+    source: 市场监管投诉处理经验规则
+    note: 命中第16条可能不予受理规则——超过法定时效
+
+  - id: missing_or_false_material
+    name: 材料不全或虚假
+    keywords:
+      - 商家不详
+      - 地址不详
+      - 无法提供
+      - 没有店名
+      - 主体不明
+      - 不知道商家
+      - 无消费凭证
+      - 没有凭证
+      - 无法提供凭证
+      - 材料不全
+      - 虚假材料
+      - 虚假信息
+    decision: REVIEW
+    reason_type: ARTICLE16_5_MISSING_OR_FALSE_MATERIALS
+    review_required: true
+    priority: 86
+    source: 市场监管投诉处理经验规则
+    note: 命中第16条可能不予受理规则——材料不全或虚假
+
+  - id: identity_verify_issue
+    name: 身份核验问题
+    keywords:
+      - 冒用他人
+      - 冒名
+      - 身份核验
+      - 拒绝身份核验
+      - 不配合身份核验
+    decision: REVIEW
+    reason_type: ARTICLE16_6_IMPERSONATION_OR_REFUSE_VERIFY
+    review_required: true
+    priority: 86
+    source: 市场监管投诉处理经验规则
+    note: 命中第16条可能不予受理规则——冒名或拒绝身份核验

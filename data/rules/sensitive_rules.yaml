@@ -1,0 +1,54 @@
+rules:
+  - id: sensitive_suicide
+    name: 自杀相关
+    keywords:
+      - 自杀
+    decision: REVIEW
+    priority: 100
+    source: 安全策略
+    note: 涉及自杀相关表述，需人工复核并启动应急响应
+
+  - id: sensitive_explosion
+    name: 爆炸威胁
+    keywords:
+      - 爆炸
+    decision: REVIEW
+    priority: 100
+    source: 安全策略
+    note: 涉及爆炸威胁表述，需人工复核并启动应急响应
+
+  - id: sensitive_poison
+    name: 投毒威胁
+    keywords:
+      - 投毒
+    decision: REVIEW
+    priority: 100
+    source: 安全策略
+    note: 涉及投毒威胁表述，需人工复核并启动应急响应
+
+  - id: sensitive_mass_incident
+    name: 群体性事件
+    keywords:
+      - 群体性
+    decision: REVIEW
+    priority: 100
+    source: 安全策略
+    note: 涉及群体性事件表述，需人工复核并启动应急响应
+
+  - id: sensitive_petition
+    name: 上访相关
+    keywords:
+      - 上访
+    decision: REVIEW
+    priority: 95
+    source: 安全策略
+    note: 涉及上访表述，需关注事态发展
+
+  - id: sensitive_classified
+    name: 涉密信息
+    keywords:
+      - 涉密
+    decision: REVIEW
+    priority: 100
+    source: 安全策略
+    note: 涉及涉密信息表述，需人工复核
