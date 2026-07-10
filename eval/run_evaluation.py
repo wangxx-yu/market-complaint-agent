@@ -47,7 +47,23 @@ class EvalReport:
     dispatch: EvalMetrics = field(default_factory=EvalMetrics)
     retrieval: EvalMetrics = field(default_factory=EvalMetrics)
     end_to_end: EvalMetrics = field(default_factory=EvalMetrics)
+    compliance: EvalMetrics = field(default_factory=EvalMetrics)
     latency_ms: list[float] = field(default_factory=list)
+    false_rejection_count: int = 0
+    review_count: int = 0
+    reply_compliance_pass: int = 0
+
+    @property
+    def false_rejection_rate(self) -> float:
+        return self.false_rejection_count / self.classification.total if self.classification.total > 0 else 0.0
+
+    @property
+    def review_rate(self) -> float:
+        return self.review_count / self.classification.total if self.classification.total > 0 else 0.0
+
+    @property
+    def reply_compliance_rate(self) -> float:
+        return self.reply_compliance_pass / self.classification.total if self.classification.total > 0 else 0.0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -55,6 +71,10 @@ class EvalReport:
             "dispatch": self.dispatch.to_dict(),
             "retrieval": self.retrieval.to_dict(),
             "end_to_end": self.end_to_end.to_dict(),
+            "compliance": self.compliance.to_dict(),
+            "false_rejection_rate": round(self.false_rejection_rate, 4),
+            "review_rate": round(self.review_rate, 4),
+            "reply_compliance_rate": round(self.reply_compliance_rate, 4),
             "latency": {
                 "count": len(self.latency_ms),
                 "avg_ms": round(sum(self.latency_ms) / len(self.latency_ms), 1) if self.latency_ms else 0,
@@ -107,6 +127,9 @@ def evaluate_all(samples: list[GoldenSample] | None = None, quick: bool = False)
         if cls_ok:
             report.classification.correct += 1
         else:
+            # 误拒率：应受理(ACCEPT)但被标记为非ACCEPT
+            if sample.expected_accept_suggestion == "ACCEPT" and result.accept_suggestion.value != "ACCEPT":
+                report.false_rejection_count += 1
             report.classification.errors.append({
                 "sample_id": sample.id,
                 "problem_text": sample.problem_text[:100],
@@ -121,7 +144,11 @@ def evaluate_all(samples: list[GoldenSample] | None = None, quick: bool = False)
                     "reason": result.reason_type.value,
                     "confidence": result.confidence,
                 },
-            })
+                })
+
+        # 复核率
+        if result.accept_suggestion.value == "REVIEW":
+            report.review_count += 1
 
         # ── Dispatch (only for market-regulation samples) ──
         if sample.expected_office_name:
