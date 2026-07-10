@@ -133,6 +133,10 @@ class ReviewConfirmRequest(BaseModel):
     reply_text: str | None = None
     reviewer: str | None = None
     notes: str | None = None
+    correct_reason_type: ReasonType | None = None
+    correct_office: str | None = None
+    reviewer_note: str | None = None
+    can_use_for_training: bool = True
 
     @field_validator("reason_type", mode="before")
     @classmethod

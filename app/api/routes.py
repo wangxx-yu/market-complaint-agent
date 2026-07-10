@@ -211,6 +211,60 @@ def review_stats() -> dict:
     return build_review_stats()
 
 
+@router.get("/reviews/pending")
+def list_pending_reviews(limit: int = 20, offset: int = 0) -> dict:
+    """返回待人工复核的投诉列表。"""
+    traces = orchestrator.trace_store.all()
+    reviewed_ids = {r.get("trace_id") for r in review_store.all()}
+    pending = [
+        {
+            "trace_id": t.get("trace_id"),
+            "problem_text": t.get("request", {}).get("problem_text", "")[:100],
+            "accept_suggestion": t.get("classification", {}).get("accept_suggestion"),
+            "reason_type": t.get("classification", {}).get("reason_type"),
+            "confidence": t.get("classification", {}).get("confidence"),
+            "review_reasons": t.get("review_reasons", []),
+        }
+        for t in traces
+        if t.get("review_reasons") and t.get("trace_id") not in reviewed_ids
+    ]
+    total = len(pending)
+    return {"total": total, "items": pending[offset:offset + limit]}
+
+
+@router.get("/reviews/{trace_id}")
+def get_review_detail(trace_id: str) -> dict:
+    """获取单条复核详情，包含 trace 和 review 记录。"""
+    trace = orchestrator.trace_store.find_by_key("trace_id", trace_id)
+    if trace is None:
+        raise HTTPException(status_code=404, detail="trace_id not found")
+    review = review_store.find_by_key("trace_id", trace_id)
+    return {
+        "trace_id": trace_id,
+        "trace": trace,
+        "review": review.get("review") if review else None,
+        "is_reviewed": review is not None,
+    }
+
+
+@router.post("/reviews/{trace_id}/reject", response_model=ReviewConfirmResponse)
+def reject_review(trace_id: str, request: ReviewConfirmRequest) -> ReviewConfirmResponse:
+    """驳回系统建议，记录人工判断。"""
+    trace = orchestrator.trace_store.find_by_key("trace_id", trace_id)
+    if trace is None:
+        raise HTTPException(status_code=404, detail="trace_id not found")
+    saved_at = datetime.now(timezone.utc)
+    review_store.append(
+        {
+            "trace_id": trace_id,
+            "saved_at": saved_at.isoformat(),
+            "decision": "REJECT",
+            "review": request.model_dump(mode="json"),
+        }
+    )
+    return ReviewConfirmResponse(trace_id=trace_id, saved=True, saved_at=saved_at)
+
+
 @router.get("/system/status")
 def system_status() -> dict:
     return build_system_status()
