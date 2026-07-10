@@ -376,8 +376,11 @@ class LLMAgentOrchestrator:
             for tc in tool_calls:
                 func = tc.get("function", {})
                 args = json.loads(func.get("arguments", "{}"))
-                result = await self._execute_tool(func.get("name", ""), args, clean_request)
-                yield {"event": "tool_result", "data": {"tool": func.get("name"), "result": result}}
+                tool_name = func.get("name", "unknown")
+                yield {"event": "node_start", "data": {"node": tool_name}}
+                result = await self._execute_tool(tool_name, args, clean_request)
+                yield {"event": "node_end", "data": {"node": tool_name, "result_summary": str(result)[:200]}}
+                yield {"event": "tool_result", "data": {"tool": tool_name, "result": result}}
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tc.get("id", ""),

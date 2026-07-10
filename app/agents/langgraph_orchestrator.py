@@ -156,10 +156,9 @@ class LangGraphOrchestrator:
             state["review_reasons"].extend(review_reasons)
             step["output_summary"] = classification.model_dump(mode="json")
             step["confidence"] = classification.confidence
+            step["decision_source"] = classification.decision_source.value
         state["classification"] = classification
-        return state
-
-    def _reject_reason(self, state: ComplaintGraphState) -> ComplaintGraphState:
+        return state, state: ComplaintGraphState) -> ComplaintGraphState:
         clean_request = state["clean_request"]
         classification = state["classification"]
         with agent_step(
@@ -210,6 +209,7 @@ class LangGraphOrchestrator:
                 state["review_reasons"].append("分派 Agent 异常，需人工选择市场监管所")
             step["output_summary"] = dispatch.model_dump(mode="json")
             step["confidence"] = dispatch.confidence
+            step["decision_source"] = dispatch.decision_source.value
             if dispatch.needs_review:
                 state["review_reasons"].append("分派结果置信度不足或使用默认所")
         state["dispatch"] = dispatch
@@ -282,6 +282,7 @@ class LangGraphOrchestrator:
                     state["review_reasons"].extend(verification.issues)
             step["output_summary"] = reply.model_dump(mode="json")
             step["confidence"] = 0.9 if reply.validation_passed else 0.45
+            step["decision_source"] = reply.decision_source.value
             if not reply.validation_passed or reply.fallback_reason:
                 state["review_reasons"].append(reply.fallback_reason or "回复生成降级")
         state["reply"] = reply

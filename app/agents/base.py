@@ -34,6 +34,7 @@ def agent_step(
                 duration_ms=round(duration_ms, 2),
                 error=state["error"],
                 degraded=state["degraded"],
+                decision_source=state.get("decision_source"),
             )
         )
 

@@ -109,6 +109,7 @@ class AgentStep(BaseModel):
     duration_ms: float
     error: str | None = None
     degraded: bool = False
+    decision_source: str | None = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
