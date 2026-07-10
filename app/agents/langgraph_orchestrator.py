@@ -85,11 +85,11 @@ class LangGraphOrchestrator:
         graph.add_node("preprocess", self._preprocess)
         graph.add_node("classify", self._classify)
         graph.add_node("reject_reason", self._reject_reason)
-        graph.add_node("dispatch", self._dispatch)
+        graph.add_node("run_dispatch", self._dispatch)
         graph.add_node("retrieve", self._retrieve)
         graph.add_node("fanout_accept", self._fanout_accept)
         graph.add_node("fanout_reject", self._fanout_reject)
-        graph.add_node("reply", self._reply)
+        graph.add_node("do_reply", self._reply)
         graph.add_node("validate", self._validate)
         graph.add_node("audit_log", self._audit_log)
 
@@ -103,15 +103,15 @@ class LangGraphOrchestrator:
                 "fanout_reject": "fanout_reject",
                 "reject_reason": "reject_reason",
                 "retrieve": "retrieve",
-                "reply": "reply",
+                "do_reply": "do_reply",
             },
         )
-        graph.add_edge("fanout_accept", "reply")
-        graph.add_edge("fanout_reject", "reply")
+        graph.add_edge("fanout_accept", "do_reply")
+        graph.add_edge("fanout_reject", "do_reply")
         graph.add_edge("reject_reason", "retrieve")
-        graph.add_edge("retrieve", "reply")
-        graph.add_edge("dispatch", "reply")
-        graph.add_edge("reply", "validate")
+        graph.add_edge("retrieve", "do_reply")
+        graph.add_edge("run_dispatch", "do_reply")
+        graph.add_edge("do_reply", "validate")
         graph.add_edge("validate", "audit_log")
         graph.add_edge("audit_log", END)
         return graph.compile()
@@ -158,7 +158,9 @@ class LangGraphOrchestrator:
             step["confidence"] = classification.confidence
             step["decision_source"] = classification.decision_source.value
         state["classification"] = classification
-        return state, state: ComplaintGraphState) -> ComplaintGraphState:
+        return state
+
+    def _reject_reason(self, state: ComplaintGraphState) -> ComplaintGraphState:
         clean_request = state["clean_request"]
         classification = state["classification"]
         with agent_step(
@@ -322,18 +324,18 @@ class LangGraphOrchestrator:
         """Route to parallel fanout nodes when both dispatch and retrieve are needed."""
         classification = state["classification"]
         if "classifier_error" in classification.evidence_fields:
-            return "reply"
+            return "do_reply"
         invalid_input = "invalid_input" in classification.evidence_fields
         has_reject_reason = classification.reason_type != ReasonType.UNKNOWN
         if invalid_input:
-            return "reply"
+            return "do_reply"
         if classification.is_market and not has_reject_reason:
             # ACCEPT — parallel: dispatch + retrieve
             return "fanout_accept"
         if not classification.is_market or has_reject_reason:
             # REJECT — parallel: reject_reason + retrieve
             return "fanout_reject"
-        return "reply"
+        return "do_reply"
 
     def _fanout_accept(self, state: ComplaintGraphState) -> ComplaintGraphState:
         """Parallel fan-out for ACCEPT path: dispatch ∥ retrieve."""
