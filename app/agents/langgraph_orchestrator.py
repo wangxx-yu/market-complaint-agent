@@ -7,6 +7,7 @@ from uuid import uuid4
 from langgraph.graph import END, StateGraph
 
 from app.agents.base import agent_step
+from app.agents.answer_verifier import AnswerVerifier
 from app.agents.classifier import ClassifierAgent
 from app.agents.dispatch import DispatchAgent
 from app.agents.reject_reason import RejectReasonAgent
@@ -52,6 +53,7 @@ class LangGraphOrchestrator:
         reject_reason_agent: RejectReasonAgent | None = None,
         retrieval_agent: RetrievalAgent | None = None,
         reply_agent: ReplyAgent | None = None,
+        answer_verifier: AnswerVerifier | None = None,
         trace_store: JsonlStore | None = None,
     ) -> None:
         self.classifier = classifier or ClassifierAgent()
@@ -59,6 +61,7 @@ class LangGraphOrchestrator:
         self.reject_reason_agent = reject_reason_agent or RejectReasonAgent()
         self.retrieval_agent = retrieval_agent or RetrievalAgent()
         self.reply_agent = reply_agent or ReplyAgent()
+        self.answer_verifier = answer_verifier or AnswerVerifier()
         self.trace_store = trace_store or JsonlStore(settings.traces_path)
         self.graph = self._build_graph()
 
@@ -261,6 +264,22 @@ class LangGraphOrchestrator:
                 )
                 step["error"] = str(exc)
                 step["degraded"] = True
+            # AnswerVerifier 校验
+            if reply.text and reply.validation_passed:
+                verification = self.answer_verifier.verify(reply.text, state.get("retrieval_hits", []))
+                if verification.issues:
+                    step["output_summary"]["verification_issues"] = verification.issues
+                if verification.fallback_reply:
+                    reply = ReplyDraft(
+                        text=verification.fallback_reply,
+                        decision_source=DecisionSource.FALLBACK,
+                        template_id="verification_fallback",
+                        validation_passed=False,
+                        fallback_reason="; ".join(verification.issues) if verification.issues else "法规引用校验失败",
+                    )
+                    step["degraded"] = True
+                elif verification.requires_review:
+                    state["review_reasons"].extend(verification.issues)
             step["output_summary"] = reply.model_dump(mode="json")
             step["confidence"] = 0.9 if reply.validation_passed else 0.45
             if not reply.validation_passed or reply.fallback_reason:
