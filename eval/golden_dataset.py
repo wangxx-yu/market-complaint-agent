@@ -16,7 +16,7 @@ class GoldenSample:
 
 GOLDEN_SAMPLES: list[GoldenSample] = [
     GoldenSample(id='eval_001', problem_text='在超市购买食品后发现过期，要求退款赔偿。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
-    GoldenSample(id='eval_002', problem_text='商户名称：金石健身俱乐部 商户地址：青铜峡市新百CCMALL四楼 消费金额：800元 市民办理年卡会员卡后退费纠纷。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
+    GoldenSample(id='eval_002', problem_text='商户名称：XX健身俱乐部 商户地址：青铜峡市XX商场四楼 消费金额：800元 市民办理年卡会员卡后退费纠纷。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
     GoldenSample(id='eval_003', problem_text='市民在餐馆就餐后发现食品安全问题，要求退款。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
     GoldenSample(id='eval_004', problem_text='商家拒绝退款，要求协调处理。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
     GoldenSample(id='eval_005', problem_text='药店销售假药，买到了过期的降压药，要求查处。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
@@ -110,7 +110,7 @@ GOLDEN_SAMPLES: list[GoldenSample] = [
     GoldenSample(id='eval_093', problem_text='叶盛镇某餐馆食品不卫生导致食客腹泻要求处理。', incident_location='叶盛镇', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN', expected_office_name='叶盛市场监管所'),
     GoldenSample(id='eval_094', problem_text='大坝镇商店销售过期儿童食品要求查处。', incident_location='大坝镇', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN', expected_office_name='大坝市场监管所'),
     GoldenSample(id='eval_095', problem_text='医疗器械经营企业销售不合格口罩要求查处。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN', expected_office_name='青铜峡市市场监督管理局'),
-    GoldenSample(id='eval_096', problem_text='小坝新百CCMALL商场内某品牌服装虚假宣传要求退款。', incident_location='小坝新百CCMALL', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN', expected_office_name='小坝市场监管所'),
+    GoldenSample(id='eval_096', problem_text='小坝XX商场内某品牌服装虚假宣传要求退款。', incident_location='小坝镇', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN', expected_office_name='小坝市场监管所'),
     GoldenSample(id='eval_097', problem_text='疫苗运输过程中冷链断裂导致疫苗失效要求追责。', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN', expected_office_name='青铜峡市市场监督管理局'),
     GoldenSample(id='eval_098', problem_text='青铜峡市市区某超市不明码标价，消费者多次被多收费。', incident_location='青铜峡市市区', expected_is_market=True, expected_accept_suggestion='ACCEPT', expected_reason_type='UNKNOWN'),
     GoldenSample(id='eval_099', problem_text='你好', expected_is_market=True, expected_accept_suggestion='REVIEW'),

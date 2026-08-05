@@ -1,10 +1,27 @@
+# Python
 .venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 *.egg-info/
 
-# Runtime data generated from local business exports.
-data/runtime/traces.jsonl
-data/runtime/reviews.jsonl
+# 真实业务数据（12315 投诉工单含个人信息——禁止提交，公开仓库仅保留 data/samples/ 脱敏样本）
+*.xlsx
+*.xls
+data/analysis/
+data/training/
+data/chroma/
+data/evaluation/
+data/runtime/
+models/
+app/tools/models/accept/
 
+# IDE / 工具
+.idea/
+.vscode/
+.tmp/
+.rivet/
+
+# 本地文档（含内部叙事与原始技术细节，不进公开仓库）
+面试叙事与简历素材.md
+项目技术文档.md
