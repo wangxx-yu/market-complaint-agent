@@ -38,8 +38,8 @@ class FailingReplyAgent:
 def test_langgraph_orchestrator_accept_path_dispatches() -> None:
     response = LangGraphOrchestrator().analyze(
         ComplaintAnalyzeRequest(
-            problem_text="商户名称：金石健身俱乐部，市民办理年卡会员卡后产生退费纠纷，请求协调处理。",
-            enterprise_address="青铜峡市新百CCMALL四楼",
+            problem_text="商户名称：XX健身俱乐部，市民办理年卡会员卡后产生退费纠纷，请求协调处理。",
+            enterprise_address="青铜峡市XX商场四楼",
         )
     )
 

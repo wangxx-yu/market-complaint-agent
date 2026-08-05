@@ -71,13 +71,13 @@
     "confidence": 1.0,
     "support": 2
   },
-  "CCMALL": {
+  "XX商场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,
     "support": 6
   },
-  "CCMALL广场": {
+  "XX商场广场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,
@@ -389,7 +389,7 @@
     "confidence": 1.0,
     "support": 2
   },
-  "品炫通讯": {
+  "XX商户": {
     "office_code": "QTX_YUMIN",
     "office_name": "裕民市场监管所",
     "confidence": 1.0,
@@ -563,7 +563,7 @@
     "confidence": 1.0,
     "support": 2
   },
-  "小坝CCMALL": {
+  "小坝XX商场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,
@@ -701,7 +701,7 @@
     "confidence": 1.0,
     "support": 2
   },
-  "小坝镇CCMALL": {
+  "小坝镇XX商场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,
@@ -1619,13 +1619,13 @@
     "confidence": 1.0,
     "support": 2
   },
-  "青铜峡市CCMALL": {
+  "青铜峡市XX商场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,
     "support": 6
   },
-  "青铜峡市CCMALL广场": {
+  "青铜峡市XX商场广场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,
@@ -2051,7 +2051,7 @@
     "confidence": 1.0,
     "support": 3
   },
-  "青铜峡市小坝CCMALL": {
+  "青铜峡市小坝XX商场": {
     "office_code": "QTX_XIAOBA",
     "office_name": "小坝市场监管所",
     "confidence": 1.0,

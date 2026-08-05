@@ -1,4 +1,4 @@
-from app.agents.classifier import ClassifierAgent
+﻿from app.agents.classifier import ClassifierAgent
 from app.agents.dispatch import DispatchAgent
 from app.agents.reject_reason import RejectReasonAgent
 from app.agents.reply import ReplyAgent
@@ -58,7 +58,7 @@ def test_classifier_marks_missing_materials_for_review() -> None:
 def test_classifier_marks_veterinary_product_as_out_of_scope() -> None:
     request = ComplaintAnalyzeRequest(
         problem_text=(
-            "市民于5月份在青铜峡市甘城子乡宁夏益海供应管理公司，花费1625元购买牛用食品添加剂“氨基丁酸”，"
+            "市民于5月份在青铜峡市甘城子乡XX公司，花费1625元购买牛用食品添加剂“氨基丁酸”，"
             "添加剂的作用是防止牛打架，食用后牛依旧兴奋，要求商家退货赔偿。"
         )
     )
@@ -191,7 +191,7 @@ def test_retrieval_records_chroma_or_fallback_status() -> None:
 def test_classifier_accepts_fitness_membership_refund_dispute() -> None:
     request = ComplaintAnalyzeRequest(
         problem_text=(
-            "商户名称：“金石健身俱乐部”商户地址：青铜峡市新百CCMALL四楼发生时间：2025年8月27日"
+            "商户名称：“XX健身俱乐部”商户地址：青铜峡市XX商场四楼发生时间：2025年8月27日"
             "消费金额：800元问题描述：市民在该健身俱乐部办理年卡会员卡后，发现个人独立柜子被他人使用，"
             "随后与店铺工作人员沟通会员卡退费事宜，却被告知若退费需扣除1个月费用。"
             "主要诉求：请求相关部门协调解决会员卡费用纠纷问题。"
